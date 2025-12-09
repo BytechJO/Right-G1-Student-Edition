@@ -1,0 +1,51 @@
+.section-three {
+  display: flex;
+  flex-direction: row;
+}
+
+.content-container-P9-Q3 {
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+  /* margin-bottom: 55px;
+  width: 35vw; */
+}
+.answer-input33{
+  border-bottom: 2px solid;
+    text-align: start;
+    vertical-align: middle;
+    line-height: normal;
+    font-size: 18px;
+    font-weight: 500;
+    width: 80%;
+}
+.red-text {
+  color: red !important;
+  font-weight: 600;
+  border-color: black !important;
+}
+
+.p9-q1-img2{
+    height: auto;
+    width: 130px;
+}
+.section-one11 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.section-two22 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.section-three33 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}

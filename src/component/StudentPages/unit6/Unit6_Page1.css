@@ -1,0 +1,75 @@
+.headset-icon-CD-unit6-page1-1,
+.click-icon-unit6-page1-1,
+.headset-icon-CD-unit6-page1-2,
+.click-icon-unit6-page1-2 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  /* background-color: #6bcff6;
+  border-radius: 20px;
+  border: rgb(255, 255, 255) solid 2px; */
+  padding: 5px;
+}
+
+.headset-icon-CD-unit6-page1-1 {
+    top: 7%;
+    right: 7.5%;
+}
+
+.click-icon-unit6-page1-1 {
+left: 20%;
+    top: 42%;
+}
+
+.headset-icon-CD-unit6-page1-2 {
+  bottom: 38%;
+  left: 26%;
+}
+
+.click-icon-unit6-page1-2 {
+  bottom: 11.5%;
+  right: 39%;
+}
+
+#num-1-unit6 {
+  top: 24%;
+  left: 30.5%;
+}
+
+#num-2-unit6 {
+  top: 36%;
+  left: 64%;
+}
+
+#num-3-unit6 {
+  top: 51%;
+  left: 23.5%;
+}
+
+#num-4-unit6 {
+  top: 39%;
+  right: 56%;
+}
+
+#num-5-unit6 {
+  top: 40%;
+  left: 13%;
+}
+
+#num-6-unit6 {
+  top: 25%;
+  right: 30%;
+}
+
+#num-7-unit6 {
+  left: 42%;
+  bottom: 25.5%;
+}
+#num-8-unit6 {
+  left: 45%;
+  bottom: 21.5%;
+}
+#num-9-unit6 {
+  left: 67%;
+  bottom: 34.5%;;
+}
