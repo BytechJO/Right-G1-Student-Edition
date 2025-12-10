@@ -12,8 +12,9 @@ export default function LeftSidebar({ isOpen, close, units, goToPage, book }) {
     <>
       <div
         className={`fixed left-0 bottom-0 w-70 h-full bg-white shadow-xl 
-        rounded-tr-2xl transition-transform duration-300 z-[99999]
-        ${isOpen ? "translate-y-0" : "translate-y-full"}`}
+  rounded-tr-2xl transition-transform duration-300 z-[99999]
+  flex flex-col
+  ${isOpen ? "translate-y-0" : "translate-y-full"}`}
       >
         {/* HEADER */}
         <div className="p-4 border-b flex justify-between items-center">
@@ -30,7 +31,7 @@ export default function LeftSidebar({ isOpen, close, units, goToPage, book }) {
               <img
                 src={book.cover}
                 className="w-28 mx-auto rounded shadow"
-                style={{ height: "130px", width: "auto" }}
+                style={{ height: "118px", width: "auto" }}
               />
             )}
 

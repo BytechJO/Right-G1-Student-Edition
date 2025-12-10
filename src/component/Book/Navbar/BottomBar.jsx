@@ -30,15 +30,18 @@ export default function BottomBar({
 
       {/* HOME */}
       {/* HOME */}
-      {pageIndex > 1 && activeTab !== "flash" && activeTab !== "poster" && (
-        <button onClick={goToIndex} className="absolute left-12">
-          <img
-            src={icons.home}
-            className="h-1 w-1"
-            style={{ height: "25px", width: "25px" }}
-          />
-        </button>
-      )}
+      {pageIndex > 1 &&
+        activeTab !== "flash" &&
+        activeTab !== "poster" &&
+        activeTab !== "posterVocab" && (
+          <button onClick={goToIndex} className="absolute left-12">
+            <img
+              src={icons.home}
+              className="h-1 w-1"
+              style={{ height: "25px", width: "25px" }}
+            />
+          </button>
+        )}
 
       {/* ZOOM IN */}
       <button onClick={zoomIn}>
@@ -126,8 +129,8 @@ export default function BottomBar({
         )}
 
       {/* RIGHT SIDEBAR */}
-      <button className="absolute right-3" onClick={icons.openRightSidebar}>
-        <icons.keyIcon size={24} color="#430f68" />
+      <button className="absolute right-3" onClick={icons.openRightSidebar} style={{color:'#430f68',display:"flex",gap:"5px"}}>
+       <span>Icon Key</span>  <icons.keyIcon size={24} color="#430f68" />
       </button>
     </footer>
   );
