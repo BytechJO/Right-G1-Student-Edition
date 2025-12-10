@@ -368,7 +368,7 @@ export default function Book() {
   const tabs = [
     { id: "student", label: "Student’s Book" },
     { id: "work", label: "Workbook" },
-    { id: "teacher", label: "Teacher’s Book" },
+    // { id: "teacher", label: "Teacher’s Book" },
     { id: "flash", label: "Flashcards" },
     { id: "poster", label: "Grammar Poster" },
     { id: "posterVocab", label: "Posters" },
@@ -376,7 +376,7 @@ export default function Book() {
   const sidebarUnits = {
     student: studentUnits,
     work: workbookUnits,
-    teacher: teacherUnits,
+    // teacher: teacherUnits,
     flash: flashUnits,
     poster: posterUnits,
     posterVocab: posterVocabUnits,
@@ -419,7 +419,7 @@ export default function Book() {
   const bookInfoSelector = {
     student: studentBookInfo,
     work: workbookInfo,
-    teacher: teacherInfo,
+    // teacher: teacherInfo,
     flash: flashInfo,
     poster: posterInfo,
     posterVocab: posterVocabInfo,
