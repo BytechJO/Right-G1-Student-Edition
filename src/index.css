@@ -24,6 +24,7 @@ button {
       display: flex;
     flex-direction: row;
     margin: 20px;
+    flex-wrap: wrap;
 }
 /* من 1024px وفوق → ديسكتوب */
 @media (max-width: 780px) {

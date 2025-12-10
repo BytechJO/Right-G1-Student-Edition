@@ -78,7 +78,7 @@ export default function BottomBar({
                 e.key === "Enter" && goToPage(Number(e.target.value))
               }
               className="w-10 text-center outline-none text-[#430f68] text-sm"
-              placeholder={pageIndex+1}
+              placeholder={pageIndex + 1}
             />
             <span className="text-[#430f68] text-sm">| {totalPages}</span>
           </>
@@ -98,33 +98,36 @@ export default function BottomBar({
       </div>
 
       {/* VIEW MODES */}
-      {!isMobile && (
-        <>
-          <button onClick={() => setViewMode("single")}>
-            <img
-              style={{ height: "25px", width: "25px" }}
-              src={icons.onePage}
-              className={`h-1 w-1 ${
-                viewMode === "single" ? "opacity-100" : "opacity-40"
-              }`}
-            />
-          </button>
+      {!isMobile &&
+        activeTab !== "poster" &&
+        activeTab !== "flash" &&
+        activeTab !== "posterVocab" && (
+          <>
+            <button onClick={() => setViewMode("single")}>
+              <img
+                style={{ height: "25px", width: "25px" }}
+                src={icons.onePage}
+                className={`h-1 w-1 ${
+                  viewMode === "single" ? "opacity-100" : "opacity-40"
+                }`}
+              />
+            </button>
 
-          <button onClick={() => setViewMode("spread")}>
-            <img
-              style={{ height: "25px", width: "25px" }}
-              src={icons.openBook}
-              className={`h-1 w-1 ${
-                viewMode === "spread" ? "opacity-100" : "opacity-40"
-              }`}
-            />
-          </button>
-        </>
-      )}
+            <button onClick={() => setViewMode("spread")}>
+              <img
+                style={{ height: "25px", width: "25px" }}
+                src={icons.openBook}
+                className={`h-1 w-1 ${
+                  viewMode === "spread" ? "opacity-100" : "opacity-40"
+                }`}
+              />
+            </button>
+          </>
+        )}
 
       {/* RIGHT SIDEBAR */}
       <button className="absolute right-3" onClick={icons.openRightSidebar}>
-        <icons.keyIcon size={18} color="#430f68" />
+        <icons.keyIcon size={24} color="#430f68" />
       </button>
     </footer>
   );
