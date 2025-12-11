@@ -439,9 +439,9 @@ const Review4_Page2_Q1 = () => {
         </button>
 
         {/* ⭐⭐⭐ NEW BUTTON */}
-        <button onClick={showAnswer} className="show-answer-btn swal-continue">
+        {/* <button onClick={showAnswer} className="show-answer-btn swal-continue">
           Show Answer
-        </button>
+        </button> */}
 
         <button className="check-button2" onClick={checkAnswers}>
           Check Answers ✓

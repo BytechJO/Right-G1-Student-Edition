@@ -387,9 +387,9 @@ const WB_Unit1_Page8_Q3 = () => {
         <button onClick={resetAnswers} className="try-again-button">
           Start Again ↻
         </button>
-        {/* <button onClick={handleShowAnswer} className="show-answer-btn">
+        <button onClick={handleShowAnswer} className="show-answer-btn">
           Show Answer
-        </button> */}
+        </button>
         <button onClick={checkAnswers} className="check-button2">
           Check Answer ✓
         </button>

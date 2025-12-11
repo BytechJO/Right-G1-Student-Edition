@@ -242,8 +242,8 @@ const handleStartDotClick = (e) => {
         >
           Start Again ↻
         </button>
-{/* 
-        <button
+
+        {/* <button
           onClick={() => {
             const correctLines = [
               {

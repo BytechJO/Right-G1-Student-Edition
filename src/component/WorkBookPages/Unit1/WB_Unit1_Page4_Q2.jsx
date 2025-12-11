@@ -240,12 +240,12 @@ export default function WB_Unit1_Page4_Q2() {
         >
           Start Again ↻
         </button>
-        {/* <button
+        <button
           onClick={showCorrectAnswers}
           className="show-answer-btn swal-continue"
         >
           Show Answer
-        </button> */}
+        </button>
         <button onClick={checkAnswers} className="check-button2">
           Check Answer ✓
         </button>

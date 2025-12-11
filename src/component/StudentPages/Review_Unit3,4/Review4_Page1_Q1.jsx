@@ -91,7 +91,7 @@ const Review4_Page1_Q1 = () => {
     <div
       style={{
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "center",padding:"30px"
       }}
     >
       <div
@@ -178,9 +178,9 @@ const Review4_Page1_Q1 = () => {
         </button>
 
         {/* ⭐⭐⭐ NEW BUTTON */}
-        <button onClick={showAnswer} className="show-answer-btn swal-continue">
+        {/* <button onClick={showAnswer} className="show-answer-btn swal-continue">
           Show Answer 
-        </button>
+        </button> */}
 
         <button onClick={handleCheck} className="check-button2">
           Check Answer ✓

@@ -153,7 +153,7 @@ const Review3_Page1_Q2 = () => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "center",padding:"30px"
       }}
     >
       <div
@@ -439,7 +439,7 @@ const Review3_Page1_Q2 = () => {
             Start Again ↻
           </button>
 
-          <button
+          {/* <button
             onClick={() => {
               const rect = containerRef.current.getBoundingClientRect();
 
@@ -481,7 +481,7 @@ const Review3_Page1_Q2 = () => {
             className="show-answer-btn swal-continue"
           >
             Show Answer
-          </button>
+          </button> */}
 
           <button onClick={checkAnswers} className="check-button2">
             Check Answer ✓

@@ -35,10 +35,12 @@ export default function LeftSidebar({ isOpen, close, units, goToPage, book }) {
               />
             )}
 
-            <h3 className="text-lg font-semibold text-[#430f68] mt-2">
-              {book.title}
+            <div className="mt-2 text-center">
+              <h3 className="text-lg font-semibold text-[#430f68] break-all text-center">
+                {book.title}
+              </h3>
               <p className="text-sm text-gray-500">{book.pages} pages</p>
-            </h3>
+            </div>
 
             <div className="border-b border-gray-200 my-3"></div>
           </div>

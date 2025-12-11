@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import bat from "../../assets/unit6/imgs/U6P53EXED-01.svg";
-import cap from "../../assets/unit6/imgs/U6P53EXED-02.svg";
-import ant from "../../assets/unit6/imgs/U6P53EXED-03.svg";
-import dad from "../../assets/unit6/imgs/U6P53EXED-04.svg";
-import ValidationAlert from "../Popup/ValidationAlert";
+import bat from "../../../assets/unit6/imgs/U6P53EXED-01.svg";
+import cap from "../../../assets/unit6/imgs/U6P53EXED-02.svg";
+import ant from "../../../assets/unit6/imgs/U6P53EXED-03.svg";
+import dad from "../../../assets/unit6/imgs/U6P53EXED-04.svg";
+import ValidationAlert from "../../Popup/ValidationAlert";
 import "./Review5_Page2_Q1.css";
 const Review5_Page2_Q1 = () => {
   const items = [

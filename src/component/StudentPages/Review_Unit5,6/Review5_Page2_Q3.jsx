@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Review5_Page2_Q3.css";
-import ValidationAlert from "../Popup/ValidationAlert";
-import img1 from "../../assets/unit6/imgs/U6P53EXEF-01.svg";
-import img2 from "../../assets/unit6/imgs/U6P53EXEF-02.svg";
+import ValidationAlert from "../../Popup/ValidationAlert";
+import img1 from "../../../assets/unit6/imgs/U6P53EXEF-01.svg";
+import img2 from "../../../assets/unit6/imgs/U6P53EXEF-02.svg";
 const Review5_Page2_Q3 = () => {
   // ===============================
   // 🔵 1) الأسئلة (كلها داخل نفس الكومبونينت)

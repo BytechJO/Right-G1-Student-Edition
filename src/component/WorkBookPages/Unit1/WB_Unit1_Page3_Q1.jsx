@@ -133,12 +133,12 @@ const WB_Unit1_Page3_Q1 = () => {
           Start Again ↻
         </button>
 
-        {/* <button
+        <button
           className="show-answer-btn swal-continue"
           onClick={() => setShowAnswer(true)}
         >
           Show Answer
-        </button> */}
+        </button>
 
         <button onClick={checkAnswers} className="check-button2">
           Check Answer ✓

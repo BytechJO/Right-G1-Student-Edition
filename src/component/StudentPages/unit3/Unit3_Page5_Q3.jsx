@@ -80,7 +80,7 @@ const Unit3_Page5_Q3 = () => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "center",padding:"30px"
       }}
     >
       <div
@@ -129,9 +129,9 @@ const Unit3_Page5_Q3 = () => {
         <button onClick={resetAnswers} className="try-again-button">
           Start Again ↻
         </button>
-        <button onClick={handleShowAnswer} className="show-answer-btn">
+        {/* <button onClick={handleShowAnswer} className="show-answer-btn">
           Show Answer
-        </button>
+        </button> */}
 
         <button onClick={checkAnswers} className="check-button2">
           Check Answer ✓

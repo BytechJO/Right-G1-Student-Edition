@@ -105,7 +105,7 @@ const Review4_Page1_Q4 = () => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "center",padding:"30px"
       }}
     >
       <div
@@ -186,9 +186,9 @@ const Review4_Page1_Q4 = () => {
         </button>
 
         {/* ⭐⭐⭐ NEW BUTTON */}
-        <button onClick={showAnswer} className="show-answer-btn swal-continue">
+        {/* <button onClick={showAnswer} className="show-answer-btn swal-continue">
           Show Answer 
-        </button>
+        </button> */}
 
         <button className="check-button2" onClick={checkAnswers}>
           Check Answers ✓

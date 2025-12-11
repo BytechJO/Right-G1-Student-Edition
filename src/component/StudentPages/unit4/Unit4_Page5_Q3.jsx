@@ -141,7 +141,7 @@ export default function Unit4_Page5_Q3() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "center",padding:"30px"
       }}
     >
       <div
@@ -226,12 +226,12 @@ export default function Unit4_Page5_Q3() {
         >
           Start Again ↻
         </button>
-        <button
+        {/* <button
           onClick={showCorrectAnswers}
           className="show-answer-btn swal-continue"
         >
           Show Answer
-        </button>
+        </button> */}
         <button onClick={checkAnswers} className="check-button2">
           Check Answer ✓
         </button>

@@ -1,27 +1,27 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Review5_Page2_Q2.css";
-import sound from "../../assets/unit6/sounds/CD50.Pg53_Instruction1_Adult Lady.mp3";
-import pauseBtn from "../../assets/unit1/imgs/Right Video Button.svg";
+// import sound from "../../../assets/unit6/sounds/CD50.Pg53_Instruction1_Adult Lady.mp3";
+import pauseBtn from "../../../assets/unit1/imgs/Right Video Button.svg";
 import { IoMdSettings } from "react-icons/io";
 import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from "react-icons/fa";
-import ValidationAlert from "../Popup/ValidationAlert";
+import ValidationAlert from "../../Popup/ValidationAlert";
 
 // Example images imports. Replace with your actual paths.
-import img1a from "../../assets/unit6/imgs/U6P53EXEE-01.svg";
-// import img1b from "../../assets/unit4/imgs/gate.png";
-// import img1c from "../../assets/unit4/imgs/kiwi.png";
+import img1a from "../../../assets/unit6/imgs/U6P53EXEE-01.svg";
+// import img1b from "../../../assets/unit4/imgs/gate.png";
+// import img1c from "../../../assets/unit4/imgs/kiwi.png";
 
-// import img2a from "../../assets/unit4/imgs/soccer.png";
-// import img2b from "../../assets/unit4/imgs/boy.png";
-// import img2c from "../../assets/unit4/imgs/goat.png";
+// import img2a from "../../../assets/unit4/imgs/soccer.png";
+// import img2b from "../../../assets/unit4/imgs/boy.png";
+// import img2c from "../../../assets/unit4/imgs/goat.png";
 
-// import img3a from "../../assets/unit4/imgs/king.png";
-// import img3b from "../../assets/unit4/imgs/key.png";
-// import img3c from "../../assets/unit4/imgs/kite.png";
+// import img3a from "../../../assets/unit4/imgs/king.png";
+// import img3b from "../../../assets/unit4/imgs/key.png";
+// import img3c from "../../../assets/unit4/imgs/kite.png";
 
-// import img4a from "../../assets/unit4/imgs/kangaroo.png";
-// import img4b from "../../assets/unit4/imgs/keylock.png";
-// import img4c from "../../assets/unit4/imgs/grapes.png";
+// import img4a from "../../../assets/unit4/imgs/kangaroo.png";
+// import img4b from "../../../assets/unit4/imgs/keylock.png";
+// import img4c from "../../../assets/unit4/imgs/grapes.png";
 
 const Review5_Page2_Q2 = () => {
   const groups = [

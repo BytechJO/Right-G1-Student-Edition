@@ -151,7 +151,7 @@ const Unit4_Page5_Q2 = () => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "center",padding:"30px"
       }}
     >
       <div
@@ -356,9 +356,9 @@ const Unit4_Page5_Q2 = () => {
         <button onClick={reset} className="try-again-button">
           Start Again ↻
         </button>
-        <button onClick={handleShowAnswer} className="show-answer-btn">
+        {/* <button onClick={handleShowAnswer} className="show-answer-btn">
           Show Answer
-        </button>
+        </button> */}
         <button onClick={checkAnswers} className="check-button2">
           Check Answer ✓
         </button>

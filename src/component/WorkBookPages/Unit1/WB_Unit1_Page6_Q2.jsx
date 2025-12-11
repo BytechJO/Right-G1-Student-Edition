@@ -216,10 +216,10 @@ export default function WB_Unit1_Page6_Q2() {
         <button className="try-again-button" onClick={reset}>
           Start Again ↻
         </button>
-{/* 
+
         <button className="show-answer-btn swal-continue" onClick={showAnswers}>
           Show Answer
-        </button> */}
+        </button>
 
         <button className="check-button2" onClick={checkAnswers}>
           Check Answer ✓

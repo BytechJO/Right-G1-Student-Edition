@@ -163,7 +163,7 @@ const WB_Unit1_Page5_Q2 = () => {
         >
           Start Again ↻
         </button>
-        {/* <button
+        <button
           className="show-answer-btn swal-continue"
           onClick={() => {
             let answerObj = {};
@@ -179,7 +179,7 @@ const WB_Unit1_Page5_Q2 = () => {
           }}
         >
           Show Answer
-        </button> */}
+        </button>
 
         <button
           className="check-button2"
