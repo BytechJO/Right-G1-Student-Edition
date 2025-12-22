@@ -378,7 +378,7 @@ export default function Book() {
     { id: "work", label: "Workbook" },
     // { id: "teacher", label: "Teacher’s Book" },
     { id: "flash", label: "Flashcards" },
-    { id: "poster", label: "Grammar Poster" },
+    // { id: "poster", label: "Grammar Poster" },
     { id: "posterVocab", label: "Posters" },
   ];
   const sidebarUnits = {
