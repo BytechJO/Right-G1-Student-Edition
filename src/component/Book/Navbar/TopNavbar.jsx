@@ -35,7 +35,7 @@ export default function TopNavbar({
       {/* RIGHT */}
       <div className="flex items-center gap-4">
         <span className="hidden lg:block text-[#430f68]">
-          Teacher Edition
+          Student Edition
         </span>
 
         {isMobile && (
