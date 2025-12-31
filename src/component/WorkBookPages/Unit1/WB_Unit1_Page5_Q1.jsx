@@ -190,12 +190,12 @@ const WB_Unit1_Page5_Q1 = () => {
         <button className="try-again-button" onClick={reset}>
           Start Again ↻
         </button>
-        <button
+        {/* <button
           onClick={showCorrectAnswers}
           className="show-answer-btn swal-continue"
         >
           Show Answer
-        </button>
+        </button> */}
         <button className="check-button2" onClick={checkAnswers}>
           Check Answer ✓
         </button>

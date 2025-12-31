@@ -1,0 +1,24 @@
+.content-container-wb-unit8-p4-q1 {
+  display: grid;
+  justify-items: center;
+  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.sentence-wrapper-wb-unit8-p4-q1 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 18px;
+}
+
+
+
+
+.row2-wb-unit8-p4-q1 {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}

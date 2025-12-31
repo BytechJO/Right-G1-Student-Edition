@@ -9,7 +9,7 @@ import RightSidebar from "./Book/Sidebars/RightSidebar";
 import workbookCover from "../assets/U1 WB/U1/Pages from cover right W.B New Int copy.pdf.png";
 import stbookCover from "../assets/unit1/imgs/Pages from cover right SbEd copy.pdf.png";
 import teacherBookCover from "../assets/Right TB/Right International TB G1_Page_001.png";
-import fcBookCover from "../assets/Right 1 FC/img/right 1 (flashcard) New_Page_01.png";
+import fcBookCover from "../assets/Right 1 FC/img/right_New_Page_01.png";
 import posterBookCover from "../assets/Right Grammar Poster/img/R1 Grammar poster_Page_01.png";
 // === VIEWERS ===
 import FlashCardViewer from "./FlashCardPages/FlashCardPages";
@@ -18,6 +18,7 @@ import PosterViewer from "./PosterGrammerPages/PosterGrammerPages";
 // === POPUP ===
 import Popup from "./Popup/Popup";
 import LessonNavigator from "./StudentPages/LessonNavigator";
+import teacherPdf from "../assets/Feedback Right- Interactive estudentbook G1.pdf";
 
 // === ASSETS ===
 import logo from "../assets/unit1/imgs/Page 01/PMAAlogo.svg";
@@ -64,6 +65,33 @@ export default function Book() {
 
   const [leftBarOpen, setLeftBarOpen] = useState(false);
   const [rightBarOpen, setRightBarOpen] = useState(false);
+
+  //------------------ swipe function -----------------------------
+// const touchStartX = useRef(0);
+// const touchEndX = useRef(0);
+// function handleTouchStart(e) {
+//   if (!isMobile) return;
+//   touchStartX.current = e.touches[0].clientX;
+// }
+
+// function handleTouchMove(e) {
+//   if (!isMobile) return;
+//   touchEndX.current = e.touches[0].clientX;
+// }
+
+// function handleTouchEnd() {
+//   if (!isMobile) return;
+
+//   const diff = touchStartX.current - touchEndX.current;
+
+//   if (Math.abs(diff) < 50) return; // تجاهل السحب الخفيف
+
+//   if (diff > 0) {
+//     nextPage(); // 👉 Swipe Left
+//   } else {
+//     prevPage(); // 👈 Swipe Right
+//   }
+// }
 
   // Popup
   const [popupOpen, setPopupOpen] = useState(false);
@@ -130,7 +158,18 @@ export default function Book() {
         setViewMode("single"); // لو شاشة صغيرة → صفحة واحدة دائمًا
       }
     }
-  }, [activeTab, isMobile]);
+  }, [activeTab]);
+useEffect(() => {
+  if (viewMode === "spread" && !isMobile) {
+    const currentPageNumber = pageIndex + 1;
+
+    // لو فردية → رجّعها للي قبلها
+    if (currentPageNumber % 2 === 1 && currentPageNumber !== 1) {
+      setPageIndex(pageIndex - 1);
+    }
+  }
+}, [viewMode]);
+
 
   // ===========================================================
   //                 📌 PAGE NAVIGATION
@@ -155,33 +194,6 @@ export default function Book() {
     // ===========================
     if (isNaN(num) || num < 1 || num > pages.length) {
       setPageIndex(1); // رجّعه للصفحة الثانية دائماً
-      return;
-    }
-
-    // ===========================
-    // 📘 Special Logic for WORKBOOK Spread (reverse pages)
-    // ===========================
-    if (activeTab === "work" && !isMobile && viewMode === "spread") {
-      // الصفحة 1 تكون سينجل دائماً
-      if (num === 1) {
-        setPageIndex(0);
-        return;
-      }
-
-      // الصفحة 2 تكون سينجل دائماً
-      if (num === 2) {
-        setPageIndex(1);
-        return;
-      }
-
-      // بعد الصفحة الثانية: left page يجب أن تكون فردية دائماً
-      let leftPage = num % 2 === 0 ? num - 1 : num;
-      let targetIndex = leftPage - 1;
-
-      // لا تسمح أن يقل عن الصفحة الثالثة
-      if (targetIndex < 2) targetIndex = 2;
-
-      setPageIndex(targetIndex);
       return;
     }
 
@@ -213,37 +225,10 @@ export default function Book() {
 
   const nextPage = () => {
     // =============== Posters → always single ===============
-    if (
-      activeTab === "poster" ||
-      activeTab === "posterVocab" ||
-      activeTab === "flash"
-    ) {
+    if (activeTab === "posterVocab" || activeTab === "flash") {
       if (pageIndex < pages.length - 1) {
         setPageIndex(pageIndex + 1);
       }
-      return;
-    }
-
-    // =============== WORKBOOK LOGIC ===============
-    if (activeTab === "work" && !isMobile && viewMode === "spread") {
-      // الصفحة 1 → single
-      if (pageIndex === 0) {
-        setPageIndex(1);
-        return;
-      }
-
-      // الصفحة 2 → single
-      if (pageIndex === 1) {
-        setPageIndex(2); // الآن start spread (show page 3–4)
-        return;
-      }
-
-      // من الآن spread → زيادة 2
-      if (pageIndex + 2 < pages.length) {
-        setPageIndex(pageIndex + 2);
-        return;
-      }
-
       return;
     }
 
@@ -263,11 +248,7 @@ export default function Book() {
 
   const prevPage = () => {
     // Posters → always one page
-    if (
-      activeTab === "poster" ||
-      activeTab === "posterVocab" ||
-      activeTab === "flash"
-    ) {
+    if (activeTab === "posterVocab" || activeTab === "flash") {
       if (pageIndex > 0) setPageIndex(pageIndex - 1);
       return;
     }
@@ -334,15 +315,108 @@ export default function Book() {
     { id: 6, label: "Review 3 and 4", start: 34, pages: 6 },
     { id: 7, label: "Unit 5", start: 40, pages: 6 },
     { id: 8, label: "Unit 6", start: 46, pages: 6 },
+    { id: 9, label: "Review 5 and 6", start: 52, pages: 6 },
+    { id: 10, label: "Unit 7", start: 58, pages: 6 },
+    { id: 11, label: "Unit 8", start: 64, pages: 6 },
+    { id: 12, label: "Review 7 and 8", start: 70, pages: 6 },
+    { id: 13, label: "Unit 9", start: 76, pages: 6 },
+    { id: 14, label: "Unit 10", start: 82, pages: 6 },
+    { id: 15, label: "Review 9 and 10", start: 88, pages: 6 },
   ];
 
   const workbookUnits = [
     { id: 1, label: "Unit 1", start: 3, pages: 7 },
-    // { id: 2, label: "Unit 2", start: 8, pages: 10 },
+    { id: 2, label: "Unit 2", start: 9, pages: 6 },
+    { id: 3, label: "Unit 3", start: 15, pages: 6 },
+    { id: 4, label: "Unit 4", start: 21, pages: 6 },
+    { id: 5, label: "Unit 5", start: 27, pages: 6 },
+    { id: 6, label: "Unit 6", start: 33, pages: 6 },
+    { id: 7, label: "Unit 7", start: 39, pages: 6 },
+    { id: 8, label: "Unit 8", start: 45, pages: 6 },
+    { id: 9, label: "Unit 9", start: 51, pages: 6 },
+    { id: 10, label: "Unit 10", start: 57, pages: 6 },
   ];
 
   const teacherUnits = [
-    { id: 1, label: "Teacher Unit 1", start: 4, pages: teacherPages.length },
+    {
+      id: 1,
+      label: "Introduction",
+      start: 4,
+      pages: 34,
+    },
+    {
+      id: 2,
+      label: "Unit 1",
+      start: 39,
+      pages: 10,
+    },
+    {
+      id: 3,
+      label: "Unit 2",
+      start: 50,
+      pages: 11,
+    },
+    {
+      id: 4,
+      label: "Unit 3",
+      start: 62,
+      pages: 9,
+    },
+    {
+      id: 5,
+      label: "Unit 4",
+      start: 72,
+      pages: 11,
+    },
+    {
+      id: 6,
+      label: "Unit 5",
+      start: 84,
+      pages: 9,
+    },
+    {
+      id: 7,
+      label: "Unit 6",
+      start: 93,
+      pages: 12,
+    },
+    {
+      id: 8,
+      label: "Unit 7",
+      start: 106,
+      pages: 9,
+    },
+
+    {
+      id: 9,
+      label: "Unit 8",
+      start: 115,
+      pages: 13,
+    },
+    {
+      id: 10,
+      label: "Unit 9",
+      start: 128,
+      pages: 8,
+    },
+    {
+      id: 11,
+      label: "Unit 10",
+      start: 136,
+      pages: 12,
+    },
+    {
+      id: 12,
+      label: "Teaching Contractions",
+      start: 149,
+      pages: 3,
+    },
+    {
+      id: 13,
+      label: "Instructions and Answer Keys",
+      start: 153,
+      pages: teacherPages.length - 152,
+    },
   ];
 
   const flashUnits = [
@@ -384,7 +458,6 @@ export default function Book() {
   const sidebarUnits = {
     student: studentUnits,
     work: workbookUnits,
-    // teacher: teacherUnits,
     flash: flashUnits,
     poster: posterUnits,
     posterVocab: posterVocabUnits,
@@ -427,12 +500,13 @@ export default function Book() {
   const bookInfoSelector = {
     student: studentBookInfo,
     work: workbookInfo,
-    // teacher: teacherInfo,
+    teacher: teacherInfo,
     flash: flashInfo,
     poster: posterInfo,
     posterVocab: posterVocabInfo,
   };
-
+  const isLastPage = pageIndex === pages.length - 1;
+  const isLastSpread = viewMode === "spread" && pageIndex === pages.length - 2;
   // ===========================================================
   //                 📌 RENDER
   // ===========================================================
@@ -451,15 +525,20 @@ export default function Book() {
       />
 
       {/* ===================== MAIN PAGE VIEW ===================== */}
-      <div
-        className="content-wrapper overflow-auto lg:overflow-hidden w-full h-[87vh] flex items-center justify-center relative"
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-      >
+     <div
+  className="content-wrapper overflow-auto lg:overflow-hidden w-full h-[87vh] flex items-center justify-center relative"
+  onMouseDown={handleMouseDown}
+  onMouseMove={handleMouseMove}
+  onMouseUp={handleMouseUp}
+  onMouseLeave={handleMouseUp}
+  //-----------swipe function---------------------
+  // onTouchStart={handleTouchStart}
+  // onTouchMove={handleTouchMove}
+  // onTouchEnd={handleTouchEnd}
+>
+
         {/* ==== NAVIGATION ARROWS (Next / Prev) ==== */}
-        {pageIndex > 0 && (
+        { pageIndex > 0 &&(
           <svg
             width="30"
             height="30"
@@ -471,7 +550,7 @@ export default function Book() {
           </svg>
         )}
 
-        {pageIndex < pages.length - 1 && (
+       { pageIndex < pages.length - 1 && (
           <svg
             width="30"
             height="30"
@@ -490,7 +569,8 @@ export default function Book() {
         activeTab === "flash" ||
         viewMode === "single" ||
         pageIndex === 0 ||
-        (activeTab === "work" && pageIndex <= 1) ? (
+        isLastPage ||
+        isLastSpread ? (
           <div
             className="bg-white rounded-2xl shadow-2xl border flex items-center justify-center overflow-hidden self-center"
             style={{
@@ -510,33 +590,19 @@ export default function Book() {
               cursor: zoom === 1 ? "default" : isDragging ? "grabbing" : "grab",
             }}
           >
-            {/* WORKBOOK → منقلب (الزوجي على اليمين، الفردي على اليسار) */}
-            {activeTab === "work" ? (
-              <>
-                <div className="flex items-center justify-center border-r">
-                  {renderPage(pages[pageIndex])} {/* RIGHT PAGE */}
-                </div>
-                <div className="flex items-center justify-center border-l">
-                  {renderPage(pages[pageIndex + 1])} {/* LEFT PAGE */}
-                </div>
-              </>
-            ) : (
-              /* باقي التابات → طبيعي */
-              <>
-                <div className="flex items-center justify-center border-r">
-                  {renderPage(pages[pageIndex])}
-                </div>
-                <div className="flex items-center justify-center border-l">
-                  {renderPage(pages[pageIndex + 1])}
-                </div>
-              </>
-            )}
+            <div className="flex items-center justify-center border-r">
+              {renderPage(pages[pageIndex])}
+            </div>
+            <div className="flex items-center justify-center border-l">
+              {renderPage(pages[pageIndex + 1])}
+            </div>
           </div>
         )}
       </div>
 
       {/* ===================== BOTTOM BAR ===================== */}
       <BottomBar
+        key={pageIndex}
         pageIndex={pageIndex}
         totalPages={pages.length}
         goToIndex={goHome}
@@ -561,6 +627,7 @@ export default function Book() {
           openRightSidebar: () => setRightBarOpen(true),
           keyIcon: FaKey,
         }}
+        teacherPdf={teacherPdf} // 👈 جديد
       />
 
       {/* ===================== LEFT SIDEBAR ===================== */}

@@ -162,9 +162,9 @@ export default function WB_Unit1_Page8_Q2() {
           Start Again ↻
         </button>
 
-        <button className="show-answer-btn swal-continue" onClick={showCorrectAnswers}>
+        {/* <button className="show-answer-btn swal-continue" onClick={showCorrectAnswers}>
           Show Answer
-        </button>
+        </button> */}
 
         <button className="check-button2" onClick={checkAnswers}>
           Check Answer ✓

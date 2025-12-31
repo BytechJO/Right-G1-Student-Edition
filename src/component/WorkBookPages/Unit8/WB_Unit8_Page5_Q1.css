@@ -1,0 +1,26 @@
+.sentence-container-wb-unit8-p5-q1 {
+    display: flex;
+    gap: 20px;
+    border: 2px solid black;
+    border-radius: 8px;
+    width: 100%;
+    padding: 10px;
+}
+
+.word-container-wb-unit8-p5-q1{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+}
+
+.wb-unit8-p5-q1-box {
+    position: relative;
+    width: 160px;
+    height: 150px;
+    border: 2px solid #999;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
