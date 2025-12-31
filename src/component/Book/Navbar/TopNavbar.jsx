@@ -36,6 +36,7 @@ export default function TopNavbar({
 
       {/* RIGHT */}
       <div className="flex items-center gap-4">
+
         {/* ✅ DOWNLOAD PDF — Teacher Only */}
         {/* {activeTab === "teacher" && (
           <div className="tooltip-wrapper">
@@ -59,6 +60,7 @@ export default function TopNavbar({
         )} */}
 
         <span className="hidden lg:block text-[#430f68]">Student Edition</span>
+
 
         {isMobile && (
           <svg
