@@ -13,23 +13,23 @@
 }
 
 .headset-icon-CD-unit5-page1-1 {
-     top: 7%;
-    right: 8.5%;
+  top: 7%;
+  right: 8.5%;
 }
 
 .click-icon-unit5-page1-1 {
-     left: 19%;
-    top: 37%;
+  left: 19%;
+  top: 37%;
 }
 
 .headset-icon-CD-unit5-page1-2 {
- bottom: 38.5%;
-    left: 26%;
+  bottom: 38%;
+  left: 26%;
 }
 
 .click-icon-unit5-page1-2 {
-  bottom: 11.5%;
-  right: 39%;
+  bottom: 10.5%;
+  right: 38%;
 }
 
 #num-1-unit5 {
@@ -70,4 +70,38 @@
 #num-8-unit5 {
   left: 20%;
   top: 32.5%;
+}
+
+.highlight-svg-unit5 {
+  position: absolute;
+  top: 22%;
+  left: 40.5%;
+  height: 25.5%;
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .headset-icon-CD-unit5-page1-1 {
+    top: 6%;
+    right: 11.5%;
+  }
+  .click-icon-unit5-page1-1 {
+    left: 19%;
+    top: 36%;
+  }
+  .headset-icon-CD-unit5-page1-2 {
+    bottom: 41.5%;
+    left: 25%;
+  }
+  .click-icon-unit5-page1-2 {
+    bottom: 14%;
+    right: 42%;
+  }
+  .highlight-svg-unit5 {
+    position: absolute;
+    top: 25%;
+    left: 39.5%;
+    height: 20.5%;
+    pointer-events: none;
+  }
 }

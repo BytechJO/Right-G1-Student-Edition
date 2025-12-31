@@ -47,32 +47,31 @@
   position: absolute;
   padding: 5px;
   top: 8%;
-      left: 69%;
+  left: 69%;
   cursor: pointer;
 }
 .click-icon-unit5-page5-2 {
   position: absolute;
   padding: 5px;
   top: 26%;
-    left: 81%;
+  left: 81%;
   cursor: pointer;
 }
 .click-icon-unit5-page5-3 {
   position: absolute;
   padding: 5px;
   top: 42%;
- left: 55%;
+  left: 55%;
   cursor: pointer;
 }
 
 .click-icon-unit5-page5-4 {
-  position: absolute;
-  padding: 5px;
-  bottom: 23%;
+    position: absolute;
+    padding: 5px;
+    bottom: 22.8%;
     left: 50%;
-  cursor: pointer;
+    cursor: pointer;
 }
-
 .letter {
   border: 2px solid #2c5287;
   height: 35px;
@@ -253,4 +252,11 @@
   border-radius: 20px;
   background-color: red;
   left: 14px;
+}
+
+@media (max-width: 1024px) {
+  .click-icon-unit5-page5-4 {
+    bottom: 25%;
+    left: 50%;
+  }
 }

@@ -211,8 +211,8 @@ const Page8_Q4 = () => {
         >
           Start Again ↻
         </button>
-        {/* 🔥 زر Show Answer
-        <button
+        {/* 🔥 زر Show Answer */}
+        {/* <button
           onClick={handleShowAnswer}
           className="show-answer-btn swal-continue"
         >

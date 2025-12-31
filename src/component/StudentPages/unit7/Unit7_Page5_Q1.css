@@ -9,6 +9,7 @@
   display: flex;
   width: 100%;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 
@@ -26,4 +27,13 @@
 
 .option-word-unit7-p5-q1.selected3 {
   border-color: #2c5287; /* فقط نغيّر اللون */
+}
+
+
+@media (max-width: 1024px) {
+  .container-unit7-p5-q1 {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    
+}
 }

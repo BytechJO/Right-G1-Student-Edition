@@ -1,0 +1,17 @@
+.content-review10-p1-q2 {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-direction: row-reverse;
+}
+
+
+
+
+@media (max-width: 1024px) {
+.content-review10-p1-q2 {
+
+    flex-direction: column-reverse;
+    justify-content: center;
+}
+}

@@ -2,24 +2,28 @@ import page_6 from "../../../assets/unit6/imgs/Right 1 Unit 06 Can We Go to the 
 import "./Unit6_Page6.css";
 import Unit6_Page6_Q2 from "./Unit6_Page6_Q2";
 import Unit6_Page6_Q3 from "./Unit6_Page6_Q3";
-import CD25_Pg27_Song_AdultLady from "../../../assets/unit3/sound3/U3P27LetsSing.mp3";
+import CD25_Pg27_Song_AdultLady from "../../../assets/unit6/sounds//U6P51Lets Sing.mp3";
 import audioBtn from "../../../assets/unit1/imgs/Page 01/Audio btn.svg";
 import arrowBtn from "../../../assets/unit1/imgs/Page 01/Arrow.svg";
 import pauseBtn from "../../../assets/unit1/imgs/Right Video Button.svg";
-import AudioWithCaption from "../../AudioWithCaption"
+import AudioWithCaption from "../../AudioWithCaption";
 const Unit6_Page6 = ({ openPopup }) => {
   const captionsExample = [
-    { start: 0, end: 4.24, text: "Page 27, exercise G. Let's sing! " },
+    { start: 0, end: 4.11, text: "Page 51, exercise G. Let's sing." },
     {
-      start: 4.27,
-      end: 13.09,
-      text: "One, two, open your book. Three, four, close your book. ",
+      start: 4.15,
+      end: 7.01,
+      text: " I can swim. Yes, I can.",
     },
-    { start: 13.12, end: 16.0, text: " Five, six, take out your pencil." },
     {
-      start: 16.04,
-      end: 21.26,
-      text: " Seven, eight, make a line. Nine, ten, listen, let's play.",
+      start: 7.05,
+      end: 13.09,
+      text: "I can climb. Yes, I can. I can do lots of things if I try.",
+    },
+    {
+      start: 13.12,
+      end: 21.17,
+      text: "Let's go fly a kite. Let's go, you and I. Let's go, you and I.",
     },
   ];
 
@@ -38,11 +42,11 @@ const Unit6_Page6 = ({ openPopup }) => {
         <svg
           width="22"
           height="22"
-          viewBox="0 0 60 60"
+          viewBox="0 0 90 90"
           style={{ overflow: "visible" }}
           onClick={() => openPopup("exercise", { startIndex: 59 })}
         >
-          <image href={arrowBtn} x="0" y="0" width="60" height="60" />
+          <image href={arrowBtn} x="0" y="0" width="90" height="90" className="svg-img"/>
         </svg>
       </div>
 
@@ -53,11 +57,11 @@ const Unit6_Page6 = ({ openPopup }) => {
         <svg
           width="22"
           height="22"
-          viewBox="0 0 60 60"
-          onClick={() => openPopup("exercise", { startIndex: 60 })}
+          viewBox="0 0 90 90"
+          onClick={() => openPopup("exercise", { startIndex: 90 })}
           style={{ overflow: "visible" }}
         >
-          <image href={arrowBtn} x="0" y="0" width="60" height="60" />
+          <image href={arrowBtn} x="0" y="0" width="90" height="90" className="svg-img"/>
         </svg>
       </div>
       <div
@@ -67,7 +71,7 @@ const Unit6_Page6 = ({ openPopup }) => {
         <svg
           width="22"
           height="22"
-          viewBox="0 0 60 60"
+          viewBox="0 0 90 90"
           onClick={() =>
             openPopup(
               "audio",
@@ -87,7 +91,7 @@ const Unit6_Page6 = ({ openPopup }) => {
           }
           style={{ overflow: "visible" }}
         >
-          <image href={audioBtn} x="0" y="0" width="60" height="60" />
+          <image href={audioBtn} x="0" y="0" width="90" height="90" className="svg-img" />
         </svg>
       </div>
     </div>

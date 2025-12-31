@@ -34,12 +34,12 @@ const Unit6_Page5_Q2 = () => {
     const image = e.target.dataset.image || null;
 
     // ⭐⭐ NEW: منع رسم أكثر من خط من نفس الصورة (image)
-    const alreadyUsed = lines.some((line) => line.image === image);
+    const alreadyUsed = lines.some((line) => line.word === word);
     if (alreadyUsed) return; // ← إضافة جديدة
 
     setFirstDot({
       word,
-      image,
+
       x: e.target.getBoundingClientRect().left - rect.left + 8,
       y: e.target.getBoundingClientRect().top - rect.top + 8,
     });
@@ -99,7 +99,7 @@ const Unit6_Page5_Q2 = () => {
     });
 
     setWrongImages(wrong); // ✅ حفظ الصور الغلط
-
+    setLocked(true);
     const total = correctMatches.length;
     const color =
       correctCount === total ? "green" : correctCount === 0 ? "red" : "orange";
@@ -138,7 +138,10 @@ const Unit6_Page5_Q2 = () => {
         }}
       >
         <div className="page7-q2-container2">
-          <h5 className="header-title-page8">2 Read, look, and match.</h5>
+          <h5 className="header-title-page8">
+            {" "}
+            <span style={{ color: "purple" }}> 2 </span> Read, look, and match.
+          </h5>
 
           <div className="match-wrapper2" ref={containerRef}>
             {/* الجمل */}
@@ -154,15 +157,21 @@ const Unit6_Page5_Q2 = () => {
               >
                 <span style={{ color: "darkblue", fontWeight: "700" }}>1 </span>
                 <div>
-                  <h5
-                    className="h5-unit6-p5-q2"
-                    onClick={() => document.getElementById("hill-dot").click()}
-                  >
-                    hill
-                    {!locked && wrongImages.includes("hill") && (
+                  <div style={{ position: "relative" }}>
+                    <h5
+                      className={`h5-unit6-p5-q2  ${
+                        locked || showAnswer ? "disabled-hover" : ""
+                      }`}
+                      onClick={() =>
+                        document.getElementById("hill-dot").click()
+                      }
+                    >
+                      hill
+                    </h5>
+                    {wrongImages.includes("hill") && (
                       <span className="error-mark-img-unit6-p5-q2">✕</span>
                     )}
-                  </h5>
+                  </div>
                   <div
                     className="dot22-unit6-q2 start-dot22-unit6-q2"
                     data-word="hill"
@@ -184,15 +193,19 @@ const Unit6_Page5_Q2 = () => {
                 {" "}
                 <span style={{ color: "darkblue", fontWeight: "700" }}>2 </span>
                 <div>
-                  <h5
-                    className="h5-unit6-p5-q2"
-                    onClick={() => document.getElementById("pin-dot").click()}
-                  >
-                    pin
-                    {!locked && wrongImages.includes("pin") && (
+                  <div style={{ position: "relative" }}>
+                    <h5
+                      className={`h5-unit6-p5-q2  ${
+                        locked || showAnswer ? "disabled-hover" : ""
+                      }`}
+                      onClick={() => document.getElementById("pin-dot").click()}
+                    >
+                      pin
+                    </h5>
+                    {wrongImages.includes("pin") && (
                       <span className="error-mark-img-unit6-p5-q2">✕</span>
                     )}
-                  </h5>
+                  </div>
                   <div
                     className="dot22-unit6-q2 start-dot22-unit6-q2"
                     data-word="pin"
@@ -214,15 +227,21 @@ const Unit6_Page5_Q2 = () => {
                 {" "}
                 <span style={{ color: "darkblue", fontWeight: "700" }}>3 </span>
                 <div>
-                  <h5
-                    className="h5-unit6-p5-q2"
-                    onClick={() => document.getElementById("mitt-dot").click()}
-                  >
-                    mitt
-                    {!locked && wrongImages.includes("mitt") && (
+                  <div style={{ position: "relative" }}>
+                    <h5
+                      className={`h5-unit6-p5-q2  ${
+                        locked || showAnswer ? "disabled-hover" : ""
+                      }`}
+                      onClick={() =>
+                        document.getElementById("mitt-dot").click()
+                      }
+                    >
+                      mitt
+                    </h5>
+                    {wrongImages.includes("mitt") && (
                       <span className="error-mark-img-unit6-p5-q2">✕</span>
                     )}
-                  </h5>
+                  </div>
                   <div
                     className="dot22-unit6-q2 start-dot22-unit6-q2"
                     data-word="mitt"
@@ -242,15 +261,21 @@ const Unit6_Page5_Q2 = () => {
               >
                 <span style={{ color: "darkblue", fontWeight: "700" }}>4 </span>
                 <div>
-                  <h5
-                    className="h5-unit6-p5-q2"
-                    onClick={() => document.getElementById("wig-dot").click()}
-                  >
-                    wig
-                    {!locked && wrongImages.includes("wig") && (
+                  <div style={{ position: "relative" }}>
+                    {" "}
+                    <h5
+                      className={`h5-unit6-p5-q2  ${
+                        locked || showAnswer ? "disabled-hover" : ""
+                      }`}
+                      onClick={() => document.getElementById("wig-dot").click()}
+                    >
+                      wig
+                    </h5>
+                    {wrongImages.includes("wig") && (
                       <span className="error-mark-img-unit6-p5-q2">✕</span>
                     )}
-                  </h5>
+                  </div>
+
                   <div
                     className="dot22-unit6-q2 start-dot22-unit6-q2"
                     data-word="wig"
@@ -265,6 +290,9 @@ const Unit6_Page5_Q2 = () => {
               <div className="img-box2">
                 <img
                   src={img1}
+                  className={`matched-img2 ${
+                    locked || showAnswer ? "disabled-hover" : ""
+                  }`}
                   alt=""
                   onClick={() => document.getElementById("img1-dot").click()}
                 />
@@ -281,6 +309,9 @@ const Unit6_Page5_Q2 = () => {
                 <img
                   src={img2}
                   alt=""
+                  className={`matched-img2 ${
+                    locked || showAnswer ? "disabled-hover" : ""
+                  }`}
                   onClick={() => document.getElementById("img2-dot").click()}
                 />{" "}
                 <div
@@ -295,6 +326,9 @@ const Unit6_Page5_Q2 = () => {
                 <img
                   src={img3}
                   alt=""
+                  className={`matched-img2 ${
+                    locked || showAnswer ? "disabled-hover" : ""
+                  }`}
                   onClick={() => document.getElementById("img3-dot").click()}
                 />{" "}
                 <div
@@ -308,6 +342,9 @@ const Unit6_Page5_Q2 = () => {
                 <img
                   src={img4}
                   alt=""
+                  className={`matched-img2 ${
+                    locked || showAnswer ? "disabled-hover" : ""
+                  }`}
                   onClick={() => document.getElementById("img4-dot").click()}
                 />{" "}
                 <div

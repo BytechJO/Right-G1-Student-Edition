@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import backgroundImage from "../../../assets/unit6/imgs/G1_U6_Pg_46-47 copy.jpg";
 import page2_2 from "../../../assets/unit3/imgs3/vocabimg_unit3-ClZR6yN5.jpg";
-import vocabulary from "../../../assets/unit3/sound3/Pg22_Vocabulary_Adult Lady.mp3";
+import vocabulary from "../../../assets/unit6/sounds/u6p46voc_bpnMzbOm.mp3";
 import { CgPlayPauseO } from "react-icons/cg";
 import num1 from "../../../assets/unit3/imgs3/Num1.svg";
 import num2 from "../../../assets/unit3/imgs3/Num2.svg";
@@ -13,14 +13,15 @@ import num7 from "../../../assets/unit3/imgs3/Num7.svg";
 import num8 from "../../../assets/unit5/imgs/Num8.svg";
 import num9 from "../../../assets/unit6/imgs/Num9.svg";
 import pauseBtn from "../../../assets/unit1/imgs/Right Video Button.svg";
-import sound1 from "../../../assets/unit1/sounds/pg4-vocabulary-1-goodbye.mp3";
-import sound2 from "../../../assets/unit1/sounds/pg4-vocabulary-2-how are you.mp3";
-import sound3 from "../../../assets/unit1/sounds/pg4-vocabulary-3-fine thank you.mp3";
-import sound4 from "../../../assets/unit1/sounds/pg4-vocabulary-4-hello..mp3";
-import sound5 from "../../../assets/unit1/sounds/pg4-vocabulary-5-good morning.mp3";
-import sound6 from "../../../assets/unit1/sounds/pg4-vocabulary-2-how are you.mp3";
-import sound7 from "../../../assets/unit1/sounds/pg4-vocabulary-3-fine thank you.mp3";
-import sound8 from "../../../assets/unit1/sounds/pg4-vocabulary-3-fine thank you.mp3";
+import sound1 from "../../../assets/unit6/sounds/U6P46VOC-01.mp3";
+import sound2 from "../../../assets/unit6/sounds/U6P46VOC-02.mp3";
+import sound3 from "../../../assets/unit6/sounds/U6P46VOC-03.mp3";
+import sound4 from "../../../assets/unit6/sounds/U6P46VOC-04.mp3";
+import sound5 from "../../../assets/unit6/sounds/U6P46VOC-05.mp3";
+import sound6 from "../../../assets/unit6/sounds/U6P46VOC-06.mp3";
+import sound7 from "../../../assets/unit6/sounds/U6P46VOC-07.mp3";
+import sound8 from "../../../assets/unit6/sounds/U6P46VOC-08.mp3";
+import sound9 from "../../../assets/unit6/sounds/U6P46VOC-09.mp3"
 import { IoMdSettings } from "react-icons/io";
 import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import { TbMessageCircle } from "react-icons/tb";
@@ -50,24 +51,29 @@ const Unit6_Page1_Vocab = () => {
     { start: 8.6, end: 11.5 }, // cake
     { start: 11.6, end: 14.6 }, // Hello
     { start: 14.7, end: 17.2 }, // Good morning
-    { start: 17.3, end: 19.8 },
-    { start: 19.9, end: 23.6 },
+    { start: 17.3, end: 21.00 },
+    { start: 21.1, end: 23.15 },
+    { start: 23.2, end: 26.15 },
+    { start: 26.2, end: 28.2 },
   ];
 
   // ================================
   // ✔ Captions Array
   // ================================
   const captions = [
-    { start: 4.35, end: 8.29, text: "Page 28, unit 4 vocabulary. " },
-    { start: 8.33, end: 11.05, text: "1.	brown. " },
-    { start: 11.09, end: 13.05, text: "2.	blue. " },
-    { start: 13.09, end: 15.24, text: "3.	yellow. " },
-    { start: 15.27, end: 18.13, text: "4.	square. " },
-    { start: 18.17, end: 21.0, text: "5.	rectangle." },
-    { start: 21.04, end: 23.11, text: "6.	triangle. " },
-    { start: 23.14, end: 25.27, text: "7.	red. " },
-    { start: 25.3, end: 26.29, text: "8.	circle. " },
+    { start: 0, end: 3.16, text: "Page 46, Unit 6, Vocabulary" },
+    { start: 3.18, end: 6.07, text: "1. Fly a kite. " },
+    { start: 6.09, end: 9.01, text: "2. Play the violin." },
+    { start: 9.03, end: 11.25, text: "3. Ride a bike." },
+    { start: 11.27, end: 14.26, text: "4. Ride a scooter." },
+    { start: 14.28, end: 17.26, text: "5. Feed the birds." },
+    { start: 17.28, end: 21.00, text: "6. Climb a tree. " },
+    { start: 21.02, end: 23.13, text: "7. Fish. " },
+    { start: 23.15, end: 26.11, text: "8. Paint a picture." },
+    { start: 26.13, end: 28.23, text: "9. Swim." },
   ];
+
+
   // ================================
   // ✔ Update caption highlight
   // ================================
@@ -149,7 +155,7 @@ const Unit6_Page1_Vocab = () => {
     }
   };
 
-  const nums = [num1, num2, num3, num4, num5, num6, num7, num8];
+  const nums = [num1, num2, num3, num4, num5, num6, num7, num8,num9];
   const wordAudios = [
     sound1,
     sound2,
@@ -159,6 +165,7 @@ const Unit6_Page1_Vocab = () => {
     sound6,
     sound7,
     sound8,
+    sound9
   ];
   const playWordAudio = (index) => {
     // أوقفي الأوديو الرئيسي
@@ -362,7 +369,7 @@ const Unit6_Page1_Vocab = () => {
           <img
             key={i}
             src={num}
-            id={`num-${i + 1}-unit4`}
+            id={`num-${i + 1}-unit6`}
             className={`num-img ${
               (activeIndex2 === i && current >= 2.8) || clickedIndex === i
                 ? "active"
@@ -371,8 +378,7 @@ const Unit6_Page1_Vocab = () => {
             style={{
               height: "20px",
               position: "absolute",
-              top: ["43%", "43%", "42%", "22%", "25%"][i],
-              left: ["14%", "54%", "71%", "40%", "32%"][i],
+      
             }}
           />
         ))}

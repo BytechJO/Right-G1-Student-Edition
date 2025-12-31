@@ -1,24 +1,26 @@
 import React, { useState } from "react";
-import find_img from "../../../assets/unit5/imgs/P40-41.jpg";
-import ValidationAlert from "../../Popup/ValidationAlert";
+import find_img from "../../../assets/unit7/img/U7P58-59.jpg";
 import Rabbit from "../../../assets/img_unit2/imgs/Rabbit.svg";
-const Unit5_Page1_find = () => {
+import ValidationAlert from "../../Popup/ValidationAlert";
+import MySVG from "../../../assets/unit7/img/U7P58 highlight.svg";
+
+const Unit7_Page1_find = () => {
   const [clickedPoint, setClickedPoint] = useState(null);
   const [checkResult, setCheckResult] = useState(null);
-
+  const [showAnswer, setShowAnswer] = useState(false);
   // ✅ منطقة المطعم (بالنسب المئوية)
   const targetArea = {
-    x1: 44.25,
-    y1: 28.76,
-    x2: 55.99,
-    y2: 40.27,
+    x1: 20,
+    y1: 64,
+    x2: 28,
+    y2: 74,
   };
 
   const handleImageClick = (e) => {
     const rect = e.target.getBoundingClientRect();
     const xPercent = ((e.clientX - rect.left) / rect.width) * 100;
     const yPercent = ((e.clientY - rect.top) / rect.height) * 100;
-    console.log(xPercent, yPercent);
+console.log(xPercent,yPercent);
 
     setClickedPoint({
       x: xPercent,
@@ -32,6 +34,7 @@ const Unit5_Page1_find = () => {
   };
 
   const handleCheck = () => {
+    if (showAnswer) return;
     if (!clickedPoint) {
       ValidationAlert.info(
         "Pay attention!",
@@ -52,10 +55,17 @@ const Unit5_Page1_find = () => {
   const handleStartAgain = () => {
     setClickedPoint(null);
     setCheckResult(null);
+    setShowAnswer(false);
+  };
+
+  const handleShowAnswer = () => {
+    setShowAnswer(true);
+    setClickedPoint(null); // نمسح النقطة اللي كبسها الطالب
+    setCheckResult("success"); // اختيارية إذا بدك يظهر نجاح
   };
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div>
       <div
         style={{
           textAlign: "center",
@@ -67,7 +77,7 @@ const Unit5_Page1_find = () => {
         <div
           style={{ display: "flex", justifyContent: "center", width: "100%" }}
         >
-          <img src={Rabbit} style={{ height: "50px", width: "auto" }} />
+          <img src={Rabbit} style={{ height: "50px", width: "auto" }} />{" "}
           <h5 className="header-title-page8">
             I need your help. Can you help me find the thirsty cat in the
             picture?
@@ -104,25 +114,22 @@ const Unit5_Page1_find = () => {
           )}
 
           {/* ✅ تلوين المنطقة الصحيحة إذا الجواب صح */}
-          {checkResult === "success" && (
-            <div
-              style={{
-                position: "absolute",
-                top: `${targetArea.y1}%`,
-                left: `${targetArea.x1}%`,
-                width: `${targetArea.x2 - targetArea.x1}%`,
-                height: `${targetArea.y2 - targetArea.y1}%`,
-                backgroundColor: "rgba(0, 255, 0, 0.55)", // أخضر شفاف
-                borderRadius: "8px",
-                pointerEvents: "none",
-              }}
-            ></div>
+          {(checkResult === "success" || showAnswer) && (
+            <img
+              src={MySVG}
+              alt="answer highlight"
+              className="highlight-svg-unit7"
+           
+            />
           )}
         </div>
       </div>
       <div className="action-buttons-container ">
         <button className="try-again-button" onClick={handleStartAgain}>
           Start Again ↻
+        </button>
+        <button className="show-answer-btn" onClick={handleShowAnswer}>
+          Show Answer
         </button>
         <button className="check-button2" onClick={handleCheck}>
           Check Answer ✓
@@ -132,4 +139,4 @@ const Unit5_Page1_find = () => {
   );
 };
 
-export default Unit5_Page1_find;
+export default Unit7_Page1_find;

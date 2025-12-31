@@ -32,12 +32,12 @@ const Unit6_Page6_Q3 = () => {
     const image = e.target.dataset.image || null;
 
     // ⭐⭐ NEW: منع رسم أكثر من خط من نفس الصورة (image)
-    const alreadyUsed = lines.some((line) => line.image === image);
+    const alreadyUsed = lines.some((line) => line.word === word);
     if (alreadyUsed) return; // ← إضافة جديدة
 
     setFirstDot({
       word,
-      image,
+
       x: e.target.getBoundingClientRect().left - rect.left + 8,
       y: e.target.getBoundingClientRect().top - rect.top + 8,
     });
@@ -139,18 +139,23 @@ const Unit6_Page6_Q3 = () => {
           <div className="match-wrapper2" ref={containerRef}>
             <div className="match-words-row2">
               <div className="word-box2">
-                <h5
-                  onClick={() => document.getElementById("climb-dot").click()}
-                >
-                  <span style={{ color: "darkblue", fontWeight: "700" }}>
-                    1{" "}
-                  </span>
-                  Can it climb a tree?
-                  <br /> Yes, it can.
+                <div style={{ position: "relative" }}>
+                  <h5
+                    className={`clickable-word-unit2-p7-q2 ${
+                      locked || showAnswer ? "disabled-hover" : ""
+                    }`}
+                    onClick={() => document.getElementById("climb-dot").click()}
+                  >
+                    <span style={{ color: "darkblue", fontWeight: "700" }}>
+                      1{" "}
+                    </span>
+                    Can it climb a tree?
+                    <br /> Yes, it can.
+                  </h5>{" "}
                   {wrongImages.includes(
                     "Can it climb a tree? Yes, it can."
                   ) && <span className="error-mark-img">✕</span>}
-                </h5>
+                </div>
                 <div
                   className="dot22-unit6-q7 start-dot22-unit6-q7"
                   data-word="Can it climb a tree? Yes, it can."
@@ -160,17 +165,24 @@ const Unit6_Page6_Q3 = () => {
               </div>
 
               <div className="word-box2">
-                <h5 onClick={() => document.getElementById("fly-dot").click()}>
-                  <span style={{ color: "darkblue", fontWeight: "700" }}>
-                    2
-                  </span>
-                  Can she fly a kite?
-                  <br />
-                  Yes, she can.
+                <div style={{ position: "relative" }}>
+                  <h5
+                    className={`clickable-word-unit2-p7-q2 ${
+                      locked || showAnswer ? "disabled-hover" : ""
+                    }`}
+                    onClick={() => document.getElementById("fly-dot").click()}
+                  >
+                    <span style={{ color: "darkblue", fontWeight: "700" }}>
+                      2
+                    </span>
+                    Can she fly a kite?
+                    <br />
+                    Yes, she can.
+                  </h5>
                   {wrongImages.includes(
                     "Can she fly a kite? Yes, she can."
                   ) && <span className="error-mark-img">✕</span>}
-                </h5>
+                </div>
                 <div
                   className="dot22-unit6-q7 start-dot22-unit6-q7"
                   data-word="Can she fly a kite? Yes, she can."
@@ -180,17 +192,24 @@ const Unit6_Page6_Q3 = () => {
               </div>
 
               <div className="word-box2">
-                <h5 onClick={() => document.getElementById("ride-dot").click()}>
-                  <span style={{ color: "darkblue", fontWeight: "700" }}>
-                    3
-                  </span>
-                  Can he ride a bike?
-                  <br />
-                  Yes, he can.
+                <div style={{ position: "relative" }}>
+                  <h5
+                    className={`clickable-word-unit2-p7-q2 ${
+                      locked || showAnswer ? "disabled-hover" : ""
+                    }`}
+                    onClick={() => document.getElementById("ride-dot").click()}
+                  >
+                    <span style={{ color: "darkblue", fontWeight: "700" }}>
+                      3
+                    </span>
+                    Can he ride a bike?
+                    <br />
+                    Yes, he can.
+                  </h5>
                   {wrongImages.includes("Can he ride a bike? Yes, he can.") && (
                     <span className="error-mark-img">✕</span>
                   )}
-                </h5>
+                </div>
                 <div
                   className="dot22-unit6-q7 start-dot22-unit6-q7"
                   data-word="Can he ride a bike? Yes, he can."
@@ -205,7 +224,9 @@ const Unit6_Page6_Q3 = () => {
                 <img
                   src={img1}
                   alt=""
-                  className="img-box2-unit6-p6-q3"
+                  className={`img-box2-unit6-p6-q3  ${
+                    locked || showAnswer ? "disabled-hover" : ""
+                  }`}
                   onClick={() => document.getElementById("img1-dot").click()}
                 />
 
@@ -221,7 +242,9 @@ const Unit6_Page6_Q3 = () => {
                 <img
                   src={img2}
                   alt=""
-                  className="img-box2-unit6-p6-q3"
+                  className={`img-box2-unit6-p6-q3  ${
+                    locked || showAnswer ? "disabled-hover" : ""
+                  }`}
                   onClick={() => document.getElementById("img2-dot").click()}
                 />{" "}
                 <div
@@ -236,7 +259,9 @@ const Unit6_Page6_Q3 = () => {
                 <img
                   src={img3}
                   alt=""
-                  className="img-box2-unit6-p6-q3"
+                  className={`img-box2-unit6-p6-q3  ${
+                    locked || showAnswer ? "disabled-hover" : ""
+                  }`}
                   onClick={() => document.getElementById("img3-dot").click()}
                 />{" "}
                 <div

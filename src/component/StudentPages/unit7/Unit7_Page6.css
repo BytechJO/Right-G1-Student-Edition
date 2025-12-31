@@ -1,31 +1,43 @@
 .click-icon-unit7-page6-2 {
-  position: absolute;
-  padding: 5px;
-        top: 3.5%;
-    right: 15%;
-
-  cursor: pointer;
+    position: absolute;
+    padding: 5px;
+    top: 23.4%;
+    right: 52%;
+    cursor: pointer;
 }
+
 
 .click-icon-unit7-page6-1 {
   position: absolute;
   padding: 5px;
- top: 45.5%;
-    left: 42.5%;
+  top: 45.5%;
+  left: 42.5%;
   cursor: pointer;
 }
 .click-icon-unit7-page6-3 {
   position: absolute;
   padding: 5px;
- top: 45.5%;
-    left: 42.5%;
+  top: 48%;
+  left: 39%;
 
   cursor: pointer;
 }
 .headset-icon-CD-unit7-page6-1 {
   position: absolute;
   padding: 5px;
-  bottom: 30%;
+  bottom: 26.5%;
   left: 24.5%;
   cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .click-icon-unit7-page6-2 {
+    top: 23.5%;
+    right: 54.5%;
+  }
+
+  .headset-icon-CD-unit7-page6-1 {
+    bottom: 28.5%;
+    left: 25%;
+  }
 }

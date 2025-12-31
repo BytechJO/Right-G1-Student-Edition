@@ -1,99 +1,97 @@
-import React, { useState } from "react";
-import img1 from "../../assets/unit5/imgs/U5P45EXEF-01.svg";
-import img2 from "../../assets/unit5/imgs/U5P45EXEF-02.svg";
-import img3 from "../../assets/unit3/imgs3/P27exeE-03.svg";
-import ValidationAlert from "../Popup/ValidationAlert";
-import "./Unit5_Page6_Q3.css";
+import React, { useState, useRef, useEffect } from "react";
 
-const Unit5_Page6_Q3 = () => {
+import img1 from "../../../assets/unit9/imgs/U9P81EXEE-01.svg";
+import img2 from "../../../assets/unit9/imgs/U9P81EXEE-02.svg";
+import "./Unit9_Page6_Q3.css";
+const Unit9_Page6_Q3 = () => {
   const questions = [
-    {
-      id: 1,
-      image: img1,
-      text: "Is this a ruler?",
-      items: [
-        { text: "Yes, it is.", correct: "x" },
-        { text: "No, it isn’t.", correct: "✓" },
-      ],
-    },
-    {
-      id: 2,
-      image: img2,
-      text: "Is this a chair?",
-      items: [
-        { text: "Yes, it is.", correct: "✓" },
-        { text: "No, it isn’t.", correct: "x" },
-      ],
-    },
+    { id: 1, text: "I want chicken.", img: img2 },
+    { id: 2, text: "I want bread.", img: img1 },
   ];
 
-  const [answers, setAnswers] = useState({});
-  const [results, setResults] = useState({});
+  // نخزن Ref لكل Canvas
+  const canvasRefs = useRef({});
 
-  // -------------------------
-  // اختيار جواب واحد فقط لكل سؤال
-  // -------------------------
-  const handleSelect = (qId, idx) => {
-    setAnswers({
-      ...answers,
-      [qId]: idx, // نخزن رقم الخيار المختار
-    });
-    setResults({})
-  };
-
-  const checkAnswers = () => {
-    const temp = {};
-    let correctCount = 0;
-    let total = questions.length;
-
+  useEffect(() => {
     questions.forEach((q) => {
-      const chosenIndex = answers[q.id];
+      const canvas = canvasRefs.current[q.id];
+      if (!canvas) return;
 
-      if (chosenIndex === undefined) {
-        temp[q.id] = "empty";
-        return;
-      }
+      const ctx = canvas.getContext("2d");
 
-      const isCorrect = q.items[chosenIndex].correct.toLowerCase() === "✓";
+      const img = new Image();
+      img.src = q.img;
 
-      temp[q.id] = isCorrect ? "correct" : "wrong";
-
-      if (isCorrect) correctCount++;
+      img.onload = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      };
     });
+  }, []);
 
-    setResults(temp);
+  // دوال الرسم
+  const startDrawing = (e, id) => {
+    const canvas = canvasRefs.current[id];
+    const ctx = canvas.getContext("2d");
 
-    if (Object.values(temp).includes("empty")) {
-      ValidationAlert.info("Please answer all questions!");
-      return;
-    }
+    ctx.isDrawing = true;
+    ctx.lineWidth = 3;
+    ctx.lineCap = "round";
+    ctx.strokeStyle = "purple";
 
-    let color =
-      correctCount === total ? "green" : correctCount === 0 ? "red" : "orange";
-
-    const scoreMessage = `
-    <div style="font-size:20px; text-align:center;">
-      <span style="color:${color}; font-weight:bold;">
-        Score: ${correctCount} / ${total}
-      </span>
-    </div>
-  `;
-    if (correctCount === total) ValidationAlert.success(scoreMessage);
-    else if (correctCount === 0) ValidationAlert.error(scoreMessage);
-    else ValidationAlert.warning(scoreMessage);
-  };
-  const reset = () => {
-    setAnswers({});
-    setResults({});
+    const rect = canvas.getBoundingClientRect();
+    ctx.lastX = (e.clientX || e.touches[0].clientX) - rect.left;
+    ctx.lastY = (e.clientY || e.touches[0].clientY) - rect.top;
   };
 
+  const draw = (e, id) => {
+    const canvas = canvasRefs.current[id];
+    const ctx = canvas.getContext("2d");
+    if (!ctx.isDrawing) return;
+
+    const rect = canvas.getBoundingClientRect();
+    const x = (e.clientX || e.touches[0].clientX) - rect.left;
+    const y = (e.clientY || e.touches[0].clientY) - rect.top;
+
+    ctx.beginPath();
+    ctx.moveTo(ctx.lastX, ctx.lastY);
+    ctx.lineTo(x, y);
+    ctx.stroke();
+
+    ctx.lastX = x;
+    ctx.lastY = y;
+  };
+
+  const stopDrawing = (id) => {
+    const canvas = canvasRefs.current[id];
+    const ctx = canvas.getContext("2d");
+    ctx.isDrawing = false;
+  };
+
+  const resetCanvas = () => {
+    questions.forEach((q) => {
+      const canvas = canvasRefs.current[q.id];
+      const ctx = canvas.getContext("2d");
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const img = new Image();
+      img.src = q.img;
+
+      img.onload = () => {
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      };
+    });
+  };
   return (
     <div
+      className="unit4-q2-p6-container"
       style={{
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        padding: "30px",
       }}
     >
       <div
@@ -106,68 +104,41 @@ const Unit5_Page6_Q3 = () => {
           justifyContent: "flex-start",
         }}
       >
-        <div className="review3-p1-q3-wrapper">
-          <h4 className="header-title-page8">
-            <span className="letter-of-Q"> F</span> Look, read, and write
-            <span style={{ color: "red" }}>✓</span>.{" "}
-          </h4>
+        <h5 className="header-title-page8">
+          <span className="ex-A">E</span>Trace and color.
+        </h5>
 
-          <div className="Unit5-P6-Q3-grid">
-            {questions.map((q) => (
-              <div key={q.id} className="Unit5-P6-Q3-box">
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                   <span className="Unit5-P6-Q3-text">{q.id}</span>
-                  <img src={q.image} alt="" className="Unit5-P6-Q3-img" />
-                  <span className="Unit5-P6-Q3-text">{q.text}</span>
-                </div>
-                <div>
-                  {q.items.map((item, idx) => {
-                    const isSelected = answers[q.id] === idx;
-                    const isWrong = results[q.id] === "wrong" && isSelected;
-
-                    return (
-                      <div key={idx} className="review3-p1-q3-row">
-                        <span className="Unit5-P6-Q3-text">{item.text}</span>
-
-                        <div className="review3-p1-q3-input-box">
-                          <input
-                            type="text"
-                            readOnly
-                            value={isSelected ? "✓" : ""}
-                            onFocus={() => handleSelect(q.id, idx)}
-                            className={`review3-p1-q3-input`}
-                          />
-
-                          {isWrong && (
-                            <span className="review3-p1-q3-x">X</span>
-                          )}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="wb-unit5-p4-q1-table">
+          {questions.map((q) => (
+            <div key={q.id} className="wb-unit5-p4-q1-row ">
+              {/* Canvas Area */}
+              <canvas
+                ref={(el) => (canvasRefs.current[q.id] = el)}
+                width={270}
+                height={260}
+                className="unit9-p3-q2-canvas"
+                onMouseDown={(e) => startDrawing(e, q.id)}
+                onMouseMove={(e) => draw(e, q.id)}
+                onMouseUp={() => stopDrawing(q.id)}
+                onMouseLeave={() => stopDrawing(q.id)}
+                onTouchStart={(e) => startDrawing(e, q.id)}
+                onTouchMove={(e) => {
+                  e.preventDefault();
+                  draw(e, q.id);
+                }}
+                onTouchEnd={() => stopDrawing(q.id)}
+              />
+            </div>
+          ))}
         </div>
       </div>
-
       <div className="action-buttons-container">
-        <button onClick={reset} className="try-again-button">
-          Start Again ↻
-        </button>
-        <button onClick={checkAnswers} className="check-button2">
-          Check Answer ✓
+        <button onClick={resetCanvas} className="try-again-button">
+          Clear Drawings ↻
         </button>
       </div>
     </div>
   );
 };
 
-export default Unit5_Page6_Q3;
+export default Unit9_Page6_Q3;

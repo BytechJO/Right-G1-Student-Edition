@@ -1,9 +1,6 @@
 import page_1 from "../../../assets/unit6/imgs/Right 1 Unit 06 Can We Go to the Park7.jpg";
 import "./Review5_Page1.css";
-import arrowBtn from "../../../assets/unit1/imgs/Right Arrow Button ....-01.svg";
-import Review5_Page1_Q1 from "./Review5_Page1_Q1";
-import Review5_Page1_Q2 from "./Review5_Page1_Q2";
-import Review5_Page1_Q3 from "./Review5_Page1_Q3";
+import arrowBtn from "../../../assets/unit1/imgs/Page 01/Arrow.svg";
 
 const Review5_Page1 = ({ openPopup }) => {
   return (

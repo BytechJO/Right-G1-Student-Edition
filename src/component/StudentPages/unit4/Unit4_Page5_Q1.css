@@ -50,7 +50,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 25px;
   cursor: pointer;
   transition: 0.2s;
   background: white;
@@ -89,4 +89,14 @@ border-color: #8cc2f5;
   align-items: center;
   justify-content: center;
   z-index: 10;
+}
+
+
+
+@media (max-width: 1024px) {
+  .question-grid-unit4-page5-q1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+   
+}
 }

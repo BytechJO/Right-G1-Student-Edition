@@ -120,6 +120,7 @@
   background-color: #c6eafa;
   border-radius: 100px;
   margin-bottom: 27px;
+  height: 70px;
   border: solid #5acbf4 3px;
 }
 .letter-sentence-pair {
@@ -177,6 +178,7 @@
     padding: 15px;
     padding-bottom: 90px;
     border-radius: 12px;
+    width: 100%;
   }
 
   .audio2 {
@@ -200,12 +202,12 @@
     /* flex-wrap: wrap !important; */
     grid-template-columns: 1fr 1fr;
     width: 100%;
+    justify-items: center;
   }
-.image-container img {
+  .image-container img {
     width: 80%;
     height: auto;
-   
-}
+  }
   .image-container {
     width: 180px;
     gap: 12px;
@@ -244,13 +246,6 @@
     bottom: 15px;
     gap: 15px;
     width: calc(100% - 30px);
-  }
-
-  .check-button2,
-  .try-again-button {
-    max-width: 200px;
-    padding: 12px 18px;
-    font-size: 15px;
   }
 }
 

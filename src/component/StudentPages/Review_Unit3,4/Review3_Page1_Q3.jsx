@@ -179,8 +179,8 @@ const Review3_Page1_Q3 = () => {
           Start Again ↻
         </button>
 
-        {/* ⭐⭐⭐ NEW BUTTON */}
-        {/* <button onClick={showAnswer} className="show-answer-btn swal-continue">
+        {/* ⭐⭐⭐ NEW BUTTON
+        <button onClick={showAnswer} className="show-answer-btn swal-continue">
           Show Answer 
         </button> */}
 

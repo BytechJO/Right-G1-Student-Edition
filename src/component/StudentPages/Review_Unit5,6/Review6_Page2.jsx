@@ -1,20 +1,14 @@
-import React, { useState } from "react";
 import page_2 from "../../../assets/unit6/imgs/Right 1 Unit 06 Can We Go to the Park10.jpg";
-import { FaHeadphones } from "react-icons/fa";
-import { PiCursorClickBold } from "react-icons/pi";
-import Popup from "../../Popup/Popup";
 import "./Review6_Page2.css";
-import song from "../../../assets/unit4/sounds/Pg33_Song_Adult Lady.mp3";
-import arrowBtn from "../../../assets/unit1/imgs/Right Arrow Button ....-01.svg";
-import audioBtn from "../../../assets/unit1/imgs/Right Audio Button 2.svg";
-import AudioWithCaption from "../../AudioWithCaption";
-import Review6_Page2_Q2 from "./Review6_Page2_Q2";
-import Review6_Page2_Q3 from "./Review6_Page2_Q3";
-import Review6_Page2_Q1 from "./Review6_Page2_Q1";
+import arrowBtn from "../../../assets/unit1/imgs/Page 01/Arrow.svg";
+
 const Review6_Page2 = ({ openPopup }) => {
   return (
-    <div className="review6-page2-background" style={{ position: "relative" }}>
-      <img src={page_2} />
+    <div
+      className="page1-img-wrapper"
+      style={{ backgroundImage: `url(${page_2})` }}
+    >
+      {/* <img src={page_2} /> */}
 
       <div
         className="click-icon-review6-page2-2 hover:scale-110 transition"
@@ -23,7 +17,7 @@ const Review6_Page2 = ({ openPopup }) => {
         <svg
           width="22"
           height="22"
-          viewBox="0 0 60 60"
+          viewBox="0 0 90 90"
           onClick={() => openPopup("exercise", { startIndex: 70 })}
           style={{ overflow: "visible" }}
         >
@@ -32,8 +26,8 @@ const Review6_Page2 = ({ openPopup }) => {
             href={arrowBtn}
             x="0"
             y="0"
-            width="60"
-            height="60"
+            width="90"
+            height="90"
           />
         </svg>
       </div>
@@ -45,7 +39,7 @@ const Review6_Page2 = ({ openPopup }) => {
         <svg
           width="22"
           height="22"
-          viewBox="0 0 60 60"
+          viewBox="0 0 90 90"
           onClick={() => openPopup("exercise", { startIndex: 71 })}
           style={{ overflow: "visible" }}
         >
@@ -54,8 +48,8 @@ const Review6_Page2 = ({ openPopup }) => {
             href={arrowBtn}
             x="0"
             y="0"
-            width="60"
-            height="60"
+            width="90"
+            height="90"
           />
         </svg>
       </div>
@@ -67,7 +61,7 @@ const Review6_Page2 = ({ openPopup }) => {
         <svg
           width="22"
           height="22"
-          viewBox="0 0 60 60"
+          viewBox="0 0 90 90"
           onClick={() => openPopup("exercise", { startIndex: 72 })}
           style={{ overflow: "visible" }}
         >
@@ -76,8 +70,8 @@ const Review6_Page2 = ({ openPopup }) => {
             href={arrowBtn}
             x="0"
             y="0"
-            width="60"
-            height="60"
+            width="90"
+            height="90"
           />
         </svg>
       </div>

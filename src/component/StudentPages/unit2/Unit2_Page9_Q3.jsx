@@ -187,8 +187,8 @@ const Unit2_Page9_Q3 = () => {
           >
             Start Again ↻
           </button>
-
-          {/* <button
+{/* 
+          <button
             className="show-answer-btn swal-continue"
             onClick={showCorrectAnswers}
           >
