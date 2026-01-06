@@ -180,8 +180,8 @@ const Review7_Page1_Q3 = () => {
         <button className="try-again-button" onClick={reset}>
           Start Again ↻
         </button>
-{/* 
-        <button
+
+        {/* <button
           className="show-answer-btn swal-continue"
           onClick={handleShowAnswer}
         >

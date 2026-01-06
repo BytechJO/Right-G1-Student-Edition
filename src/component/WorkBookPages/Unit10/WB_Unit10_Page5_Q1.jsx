@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-import bat from "../../../assets/unit6/imgs/U6P50EXEB-01.svg";
-import cap from "../../../assets/unit6/imgs/U6P50EXEB-02.svg";
-import ant from "../../../assets/unit6/imgs/U6P50EXEB-03.svg";
-import dad from "../../../assets/unit6/imgs/U6P50EXEB-04.svg";
+import bat from "../../../assets/U1 WB/U10/U10P61EXEI-01.svg";
+import cap from "../../../assets/U1 WB/U10/U10P61EXEI-02.svg";
+import ant from "../../../assets/U1 WB/U10/U10P61EXEI-03.svg";
+import dad from "../../../assets/U1 WB/U10/U10P61EXEI-04.svg";
 import ValidationAlert from "../../Popup/ValidationAlert";
 import "./WB_Unit10_Page5_Q1.css"
 const WB_Unit10_Page5_Q1 = () => {
@@ -164,7 +164,7 @@ const WB_Unit10_Page5_Q1 = () => {
                     {q.text}
                   </p>
                 </div>
-                <img src={q.img} alt="" className="q-img-wb-unit2-page3-q2" />
+                <img src={q.img} alt="" className="q-img-wb-unit10-p5-q1" />
               </div>
 
               <div className="sentence-wrapper-wb-unit4-p1-q2">

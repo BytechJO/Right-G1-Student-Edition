@@ -1,17 +1,16 @@
 .wb-unit7-p5-q1 {
-  position: absolute;
-  padding: 5px;
-  top: 14.5%;
-  left: 41%;
+    position: absolute;
+    padding: 5px;
+    top: 3.5%;
+    left: 52.5%;
 }
-
 .wb-unit7-p5-q2 {
-  position: absolute;
-  padding: 5px;
-  top: 45.5%;
-  left: 35%;
+    position: absolute;
+    padding: 5px;
+    top: 59%;
+    left: 51%;
 }
-
+/* 
 @media (max-width: 1024px) {
   .wb-unit7-p5-q1 {
     top: 14.5%;
@@ -34,4 +33,4 @@
     top: 45.5%;
     left: 35%;
   }
-}
+} */

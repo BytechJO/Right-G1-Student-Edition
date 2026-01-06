@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import deer from "../../../assets/unit6/imgs/U6P54EXEC-01.svg";
+import deer from "../../../assets/U1 WB/U9/U9P54EXEI-01.svg";
 import ValidationAlert from "../../Popup/ValidationAlert";
 import "./WB_Unit9_Page4_Q2.css"
 const data = [
@@ -145,7 +145,7 @@ const WB_Unit9_Page4_Q2 = () => {
 
             <img
               src={deer}
-              className="shape-img-unit5-p5-q3"
+              className="shape-img-wb-unit9-p4-q2"
               alt=""
               style={{ height: "300px", width: "auto" }}
             />
@@ -164,7 +164,7 @@ const WB_Unit9_Page4_Q2 = () => {
         </button> */}
 
         <button className="check-button2" onClick={checkAnswers}>
-          Check Answers ✓
+          Check Answer ✓
         </button>
       </div>
     </div>

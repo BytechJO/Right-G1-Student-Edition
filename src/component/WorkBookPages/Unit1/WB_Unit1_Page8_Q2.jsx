@@ -161,8 +161,8 @@ export default function WB_Unit1_Page8_Q2() {
         <button className="try-again-button" onClick={reset}>
           Start Again ↻
         </button>
-
-        {/* <button className="show-answer-btn swal-continue" onClick={showCorrectAnswers}>
+{/* 
+        <button className="show-answer-btn swal-continue" onClick={showCorrectAnswers}>
           Show Answer
         </button> */}
 

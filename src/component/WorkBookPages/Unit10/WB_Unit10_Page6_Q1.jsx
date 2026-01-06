@@ -1,23 +1,25 @@
 import React, { useState } from "react";
 import "./WB_Unit10_Page6_Q1.css";
 import ValidationAlert from "../../Popup/ValidationAlert";
-import img1 from "../../../assets/unit8/imgs/U8P68EXEA1-01.svg";
-import img2 from "../../../assets/unit8/imgs/U8P68EXEA1-02.svg";
-import img3 from "../../../assets/unit8/imgs/U8P68EXEA1-03.svg";
-import img4 from "../../../assets/unit8/imgs/U8P68EXEA1-04.svg";
+import img1 from "../../../assets/U1 WB/U10/U10P62EXEA-01.svg";
+import img2 from "../../../assets/U1 WB/U10/U10P62EXEA-02.svg";
+import img3 from "../../../assets/U1 WB/U10/U10P62EXEA-03.svg";
+import img4 from "../../../assets/U1 WB/U10/U10P62EXEA-04.svg";
+import img5 from "../../../assets/U1 WB/U10/U10P62EXEA-05.svg";
+import img6 from "../../../assets/U1 WB/U10/U10P62EXEA-06.svg";
 const data = [
-  { img: img4, scrambled: "geg", answer: "egg", pattern: "geg" },
+  { img: img1, scrambled: "geg", answer: "egg", pattern: "geg" },
   { img: img2, scrambled: "ent", answer: "net", pattern: "ent" },
   {
-    img: img1,
+    img: img3,
     scrambled: "tej",
     answer: "jet",
     pattern: "tej",
   },
 
-  { img: img3, scrambled: "ebd", answer: "bed", pattern: "ebd" },
-  { img: img4, scrambled: "neh", answer: "hen", pattern: "neh" },
-  { img: img3, scrambled: "nte", answer: "ten", pattern: "nte" },
+  { img: img4, scrambled: "ebd", answer: "bed", pattern: "ebd" },
+  { img: img5, scrambled: "neh", answer: "hen", pattern: "neh" },
+  { img: img6, scrambled: "nte", answer: "ten", pattern: "nte" },
 ];
 
 const WB_Unit10_Page6_Q1 = () => {
@@ -116,7 +118,7 @@ const WB_Unit10_Page6_Q1 = () => {
             <span className="ex-A">A</span>Look, unscramble, and write. words.
           </h3>
 
-          <div className="unscramble-row-wb-unit9-p6-q1 ">
+          <div className="unscramble-row-wb-unit10-p6-q1 ">
             {data.map((item, index) => (
               <div className="unscramble-box-wb-unit10-p6-q1" key={index}>
                 <div className="img-box-wb-unit10-p6-q1">
@@ -126,7 +128,7 @@ const WB_Unit10_Page6_Q1 = () => {
                   >
                     {index + 1}
                   </span>{" "}
-                  <img src={item.img} alt="" style={{ height: "130px" }} />
+                  <img src={item.img} alt="" className="img-wb-unit10-p6-q1" />
                 </div>
                 <div className="input-row">
                   <span className="pattern" style={{ fontSize: "22px" }}>
@@ -143,9 +145,7 @@ const WB_Unit10_Page6_Q1 = () => {
                     />
 
                     {/* ❌ علامة الخطأ */}
-                    {wrongInputs[index] && (
-                      <div className="error-icon">✕</div>
-                    )}
+                    {wrongInputs[index] && <div className="error-icon">✕</div>}
                   </div>
                 </div>
               </div>

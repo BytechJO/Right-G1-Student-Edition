@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ValidationAlert from "../../Popup/ValidationAlert";
-import farmImg from "../../../assets/unit7/img/U7P63EXEC.svg"; // عدل المسار حسب مشروعك
+import farmImg from "../../../assets/U1 WB/U9/U9P51EXEB.svg"; // عدل المسار حسب مشروعك
 import "./WB_Unit9_Page1_Q2.css";
 
 const WB_Unit9_Page1_Q2 = () => {
@@ -186,8 +186,8 @@ const resetAll = () => {
         <button onClick={resetAll} className="try-again-button">
           Start Again ↻
         </button>
-
-        {/* <button onClick={showAnswers} className="show-answer-btn swal-continue">
+{/* 
+        <button onClick={showAnswers} className="show-answer-btn swal-continue">
           Show Answer
         </button> */}
 

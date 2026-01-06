@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 // import "./Unit2_Page8_Q1.css";
-import table from "../../../assets/unit1/imgs/table2.jpg";
-import dish from "../../../assets/unit1/imgs/dish3.jpg";
-import tiger from "../../../assets/unit1/imgs/tiger.svg";
-import duck from "../../../assets/unit1/imgs/duck.svg";
+import table from "../../../assets/U1 WB/U3/SVG/U3P19EXEJ-01.svg";
+import dish from "../../../assets/U1 WB/U3/SVG/U3P19EXEJ-02.svg";
+import tiger from "../../../assets/U1 WB/U3/SVG/U3P19EXEJ-03.svg";
+import duck from "../../../assets/U1 WB/U3/SVG/U3P19EXEJ-04.svg";
 import ValidationAlert from "../../Popup/ValidationAlert";
 
 const WB_Unit3_Page5_Q2 = () => {
@@ -243,7 +243,7 @@ const WB_Unit3_Page5_Q2 = () => {
                     }`}
                     alt=""
                     onClick={() => document.getElementById("dot-img2").click()}
-                    style={{ cursor: "pointer", height: "110px" }}
+                    style={{ cursor: "pointer", height: "100px" }}
                   />
                 </div>
               </div>

@@ -232,7 +232,7 @@ export default function WB_Unit9_Page5_Q1() {
 
             <div className="word-btn-wb-u9-p5-q1">
               {words.map((w) => (
-                <div key={w.text} className="word-label-wrapper-wb-u1-p6-q2">
+                <div key={w.text} className="word-label-wrapper-wb-u9-p5-q1">
                   <div
                     className={`word-label-wb-u1-p6-q2 ${
                       foundWords.includes(w.text) ? "done" : ""
@@ -255,8 +255,8 @@ export default function WB_Unit9_Page5_Q1() {
         <button className="try-again-button" onClick={reset}>
           Start Again ↻
         </button>
-{/* 
-        <button className="show-answer-btn swal-continue" onClick={showAnswers}>
+
+        {/* <button className="show-answer-btn swal-continue" onClick={showAnswers}>
           Show Answer
         </button> */}
 

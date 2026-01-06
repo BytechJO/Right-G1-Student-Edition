@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import page from "../../../assets/U1 WB/imgs/Right G1- Activity Book_page-0059.jpg";
+import page from "../../../assets/U1 WB/U10/Right 1 _WB_Ch103.png";
 import arrowBtn from "../../../assets/unit1/imgs/Page 01/Arrow.svg";
 import "./WB_Unit10_Page3.css";
 
@@ -34,7 +34,7 @@ const WB_Unit10_Page3 = ({ openPopup }) => {
         </svg>
       </div>
       <div
-        className="wb-unit10-p1-q2 hover:scale-110 transition"
+        className="wb-unit10-p3-q2 hover:scale-110 transition"
         style={{ overflow: "visible" }}
       >
         <svg

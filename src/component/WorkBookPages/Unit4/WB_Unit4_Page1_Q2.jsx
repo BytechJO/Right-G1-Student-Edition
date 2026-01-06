@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-import bat from "../../../assets/unit6/imgs/U6P50EXEB-01.svg";
-import cap from "../../../assets/unit6/imgs/U6P50EXEB-02.svg";
-import ant from "../../../assets/unit6/imgs/U6P50EXEB-03.svg";
-import dad from "../../../assets/unit6/imgs/U6P50EXEB-04.svg";
+import bat from "../../../assets/U1 WB/U4/U4P21EXEB-01.svg";
+import cap from "../../../assets/U1 WB/U4/U4P21EXEB-02.svg";
+import ant from "../../../assets/U1 WB/U4/U4P21EXEB-03.svg";
+import dad from "../../../assets/U1 WB/U4/U4P21EXEB-04.svg";
 import ValidationAlert from "../../Popup/ValidationAlert";
 import "./WB_Unit4_Page1_Q2.css";
 const WB_Unit4_Page1_Q2 = () => {
@@ -45,6 +45,39 @@ const WB_Unit4_Page1_Q2 = () => {
   const [answers, setAnswers] = useState(
     questions.map((q) => q.parts.map((p) => (p.type === "input" ? "" : null)))
   );
+  const [selectedColors, setSelectedColors] = useState(
+    questions.map(() => null)
+  );
+  const paletteColors = ["brown", "rgb(255, 187, 0)", "blue", "red"];
+
+  const [activePaletteIndex, setActivePaletteIndex] = useState(null);
+
+  const [svgContent, setSvgContent] = useState({});
+  // const [svgImages, setSvgImages] = useState({});
+  // const [imageColors, setImageColors] = useState({});
+  // const [activePalette, setActivePalette] = useState(null);
+
+  useEffect(() => {
+    const loadSvgs = async () => {
+      const files = [bat, cap, ant, dad];
+
+      const contents = await Promise.all(
+        files.map((file) =>
+          fetch(file)
+            .then((r) => r.text())
+            .then((text) =>
+              text
+                .replaceAll('fill="none"', 'fill="currentColor"')
+                .replaceAll(/stroke="[^"]*"/g, 'stroke="currentColor"')
+            )
+        )
+      );
+
+      setSvgContent(contents);
+    };
+
+    loadSvgs();
+  }, []);
 
   const [wrongInputs, setWrongInputs] = useState([]);
   const [locked, setLocked] = useState(false);
@@ -117,6 +150,10 @@ const WB_Unit4_Page1_Q2 = () => {
     );
     setWrongInputs([]);
     setLocked(false);
+
+    // 🔁 إعادة الصور للون الأسود
+    setSelectedColors(questions.map(() => null));
+    setActivePaletteIndex(null);
   };
 
   return (
@@ -130,11 +167,12 @@ const WB_Unit4_Page1_Q2 = () => {
         padding: "30px",
       }}
     >
-      <div  className="div-forall"
+      <div
+        className="div-forall"
         style={{
           display: "flex",
           flexDirection: "column",
-          gap: "30px",
+          // gap: "30px",
           width: "60%",
           justifyContent: "flex-start",
         }}
@@ -142,13 +180,43 @@ const WB_Unit4_Page1_Q2 = () => {
         <h5 className="header-title-page8">
           <span className="ex-A">B</span>Look, write, and color.
         </h5>
+        <span style={{ fontSize: "14px", color: "gray" }}>
+          Hint: Double Click to Color Word
+        </span>
         <div className="content-container-wb-unit4-p1-q2">
           {questions.map((q, qIndex) => (
             <div key={qIndex} className="row2-wb-unit4-p1-q2">
               <div style={{ display: "flex", gap: "10px" }}>
                 <span className="num-span">{qIndex + 1}</span>
-                <img src={q.img} alt="" className="q-img-wb-unit2-page3-q2" />
+                {svgContent[qIndex] ? (
+                  <div
+                    className="svg-wrapper wb-svg-colorable"
+                    style={{ color: selectedColors[qIndex] || "transparent" }}
+                    onDoubleClick={() => setActivePaletteIndex(qIndex)}
+                    onTouchStart={() => setActivePaletteIndex(qIndex)}
+                    dangerouslySetInnerHTML={{ __html: svgContent[qIndex] }}
+                  />
+                ) : (
+                  <div className="svg-placeholder">Loading...</div>
+                )}
               </div>
+              {activePaletteIndex === qIndex && (
+                <div className="color-palette-wb-unit4-p1-q2 ">
+                  {paletteColors.map((color) => (
+                    <button
+                      key={color}
+                      className="color-circle"
+                      style={{ backgroundColor: color }}
+                      onClick={() => {
+                        const copy = [...selectedColors];
+                        copy[qIndex] = color;
+                        setSelectedColors(copy);
+                        setActivePaletteIndex(null); // سكّر الباليت
+                      }}
+                    />
+                  ))}
+                </div>
+              )}
 
               <div className="sentence-wrapper-wb-unit4-p1-q2">
                 {q.parts.map((part, pIndex) => {
@@ -164,7 +232,6 @@ const WB_Unit4_Page1_Q2 = () => {
                     <span key={pIndex} style={{ position: "relative" }}>
                       <input
                         type="text"
-                      
                         className="inline-input-wb-unit4-p1-q2"
                         value={answers[qIndex][pIndex] || ""}
                         onChange={(e) =>
@@ -173,12 +240,11 @@ const WB_Unit4_Page1_Q2 = () => {
                         disabled={locked}
                       />
 
-                      {
-                        wrongInputs.includes(`${qIndex}-${pIndex}`) && (
-                          <span className="error-mark-input-wb-unit2-page3-q2">
-                            ✕
-                          </span>
-                        )}
+                      {wrongInputs.includes(`${qIndex}-${pIndex}`) && (
+                        <span className="error-mark-input-wb-unit2-page3-q2">
+                          ✕
+                        </span>
+                      )}
                     </span>
                   );
                 })}

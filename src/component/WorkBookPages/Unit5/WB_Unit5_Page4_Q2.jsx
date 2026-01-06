@@ -1,7 +1,8 @@
-import React, { useState, useRef } from "react";
-import img1 from "../../../assets/unit6/imgs/U6P51EXEF-01.svg";
-import img2 from "../../../assets/unit6/imgs/U6P51EXEF-02.svg";
-import img3 from "../../../assets/unit6/imgs/U6P51EXEF-03.svg";
+import React, { useState, useRef, useEffect } from "react";
+import img1 from "../../../assets/U1 WB/U5/U5P30EXEH-01.svg";
+import img2 from "../../../assets/U1 WB/U5/U5P30EXEH-02.svg";
+import img3 from "../../../assets/U1 WB/U5/U5P30EXEH-03.svg";
+import img4 from "../../../assets/U1 WB/U5/U5P30EXEH-04.svg";
 import ValidationAlert from "../../Popup/ValidationAlert";
 // import "./WB_Unit3_Page3_Q2.css";
 
@@ -20,6 +21,28 @@ const WB_Unit5_Page4_Q2 = () => {
     { word: "This is a pen.", image: "img1" },
     { word: "This is a globe.", image: "img3" },
   ];
+
+  const [svgImages, setSvgImages] = useState({});
+  const [imageColors, setImageColors] = useState({});
+  const [activePalette, setActivePalette] = useState(null);
+
+  useEffect(() => {
+    const loadSvgs = async () => {
+      const files = { img1, img2, img3, img4 };
+
+      const result = {};
+      for (const key in files) {
+        const text = await fetch(files[key]).then((r) => r.text());
+        result[key] = text
+          .replaceAll('fill="none"', 'fill="currentColor"')
+          .replaceAll(/stroke="[^"]*"/g, 'stroke="currentColor"');
+      }
+
+      setSvgImages(result);
+    };
+
+    loadSvgs();
+  }, []);
 
   // ============================
   // 1️⃣ الضغط على النقطة الأولى (start-dot)
@@ -136,12 +159,14 @@ const WB_Unit5_Page4_Q2 = () => {
           <h5 className="header-title-page8">
             <span className="ex-A">H</span>Read, look, and match. Color.
           </h5>
-
+  <span style={{ fontSize: "14px", color: "gray" }}>
+          Hint: Double Click to Color Word
+        </span>
           <div className="match-wrapper2" ref={containerRef}>
             <div className="match-words-row2">
               <div className="word-box2">
                 <h5
-                  className={`h5-wb-unit3-p3-q2   ${
+                  className={`h5-wb-unit5-p4-q2   ${
                     locked || showAnswer ? "disabled-word" : ""
                   }`}
                   onClick={() => document.getElementById("climb-dot").click()}
@@ -161,7 +186,7 @@ const WB_Unit5_Page4_Q2 = () => {
 
               <div className="word-box2">
                 <h5
-                  className={`h5-wb-unit3-p3-q2   ${
+                  className={`h5-wb-unit5-p4-q2   ${
                     locked || showAnswer ? "disabled-word" : ""
                   }`}
                   onClick={() => document.getElementById("fly-dot").click()}
@@ -181,7 +206,7 @@ const WB_Unit5_Page4_Q2 = () => {
 
               <div className="word-box2">
                 <h5
-                  className={`h5-wb-unit3-p3-q2   ${
+                  className={`h5-wb-unit5-p4-q2   ${
                     locked || showAnswer ? "disabled-word" : ""
                   }`}
                   onClick={() => document.getElementById("ride-dot").click()}
@@ -200,7 +225,7 @@ const WB_Unit5_Page4_Q2 = () => {
               </div>
               <div className="word-box2">
                 <h5
-                  className={`h5-wb-unit3-p3-q2   ${
+                  className={`h5-wb-unit5-p4-q2   ${
                     locked || showAnswer ? "disabled-word" : ""
                   }`}
                   onClick={() => document.getElementById("forks-dot").click()}
@@ -221,14 +246,41 @@ const WB_Unit5_Page4_Q2 = () => {
             {/* الصور */}
             <div className="match-images-row2">
               <div className="img-box2">
-                <img
+                {/* <img
                   src={img1}
                   alt=""
                   className={`img-box2-unit6-p6-q3 ${
                     locked || showAnswer ? "disabled-hover" : ""
                   }`}
                   onClick={() => document.getElementById("img1-dot").click()}
-                />
+                /> */}
+                {svgImages.img1 && (
+                  <div
+                     className={`svg-wrapper img-box2-unit6-p6-q3 ${
+                      locked || showAnswer ? "disabled-hover" : ""
+                    }`}
+                    style={{ color: imageColors.img1 || "#ffffffff" }}
+                    onDoubleClick={() => setActivePalette("img1")}
+                    onTouchStart={() => setActivePalette("img1")}
+                    onClick={() => document.getElementById("img1-dot").click()}
+                    dangerouslySetInnerHTML={{ __html: svgImages.img1 }}
+                  />
+                )}
+                {activePalette === "img1" && (
+                  <div className="color-palette-wb-unit5-p4-q2">
+                    {["red", "blue", "yellow", "brown"].map((color) => (
+                      <button
+                        key={color}
+                        className="color-circle"
+                        style={{ backgroundColor: color }}
+                        onClick={() => {
+                          setImageColors((prev) => ({ ...prev, img1: color }));
+                          setActivePalette(null);
+                        }}
+                      />
+                    ))}
+                  </div>
+                )}
 
                 <div
                   className="dot22-unit6-q7 end-dot22-unit6-q7"
@@ -238,14 +290,42 @@ const WB_Unit5_Page4_Q2 = () => {
                 ></div>
               </div>
               <div className="img-box2">
-                <img
+                {/* <img
                   src={img2}
                   alt=""
                   className={`img-box2-unit6-p6-q3 ${
                     locked || showAnswer ? "disabled-hover" : ""
                   }`}
                   onClick={() => document.getElementById("img2-dot").click()}
-                />{" "}
+                /> */}
+                {svgImages.img2 && (
+                  <div
+                    className={`svg-wrapper img-box2-unit6-p6-q3 ${
+                      locked || showAnswer ? "disabled-hover" : ""
+                    }`}
+                    style={{ color: imageColors.img2 || "transparent" }}
+                    onDoubleClick={() => setActivePalette("img2")}
+                    onTouchStart={() => setActivePalette("img2")}
+                    onClick={() => document.getElementById("img2-dot").click()}
+                    dangerouslySetInnerHTML={{ __html: svgImages.img2 }}
+                  />
+                )}
+
+                {activePalette === "img2" && (
+                  <div className="color-palette-wb-unit5-p4-q2">
+                    {["red", "blue", "yellow", "brown"].map((color) => (
+                      <button
+                        key={color}
+                        className="color-circle"
+                        style={{ backgroundColor: color }}
+                        onClick={() => {
+                          setImageColors((prev) => ({ ...prev, img2: color }));
+                          setActivePalette(null);
+                        }}
+                      />
+                    ))}
+                  </div>
+                )}
                 <div
                   className="dot22-unit6-q7 end-dot22-unit6-q7"
                   data-image="img2"
@@ -254,14 +334,42 @@ const WB_Unit5_Page4_Q2 = () => {
                 ></div>
               </div>
               <div className="img-box2">
-                <img
+                {/* <img
                   src={img3}
                   alt=""
                   className={`img-box2-unit6-p6-q3 ${
                     locked || showAnswer ? "disabled-hover" : ""
                   }`}
                   onClick={() => document.getElementById("img3-dot").click()}
-                />{" "}
+                /> */}
+                {svgImages.img2 && (
+                  <div
+                     className={`svg-wrapper img-box2-unit6-p6-q3 ${
+                      locked || showAnswer ? "disabled-hover" : ""
+                    }`}
+                    style={{ color: imageColors.img3 || "#ffffffff" }}
+                    onDoubleClick={() => setActivePalette("img3")}
+                    onTouchStart={() => setActivePalette("img3")}
+                    onClick={() => document.getElementById("img3-dot").click()}
+                    dangerouslySetInnerHTML={{ __html: svgImages.img3 }}
+                  />
+                )}
+
+                {activePalette === "img3" && (
+                  <div className="color-palette-wb-unit5-p4-q2">
+                    {["red", "blue", "yellow", "brown"].map((color) => (
+                      <button
+                        key={color}
+                        className="color-circle"
+                        style={{ backgroundColor: color }}
+                        onClick={() => {
+                          setImageColors((prev) => ({ ...prev, img3: color }));
+                          setActivePalette(null);
+                        }}
+                      />
+                    ))}
+                  </div>
+                )}
                 <div
                   className="dot22-unit6-q7 end-dot22-unit6-q7"
                   data-image="img3"
@@ -270,14 +378,43 @@ const WB_Unit5_Page4_Q2 = () => {
                 ></div>
               </div>
               <div className="img-box2">
-                <img
-                  src={img3}
+                {/* <img
+                  src={img4}
                   alt=""
                   className={`img-box2-unit6-p6-q3 ${
                     locked || showAnswer ? "disabled-hover" : ""
                   }`}
                   onClick={() => document.getElementById("img4-dot").click()}
-                />{" "}
+                /> */}
+
+                {svgImages.img4 && (
+                  <div
+                     className={`svg-wrapper img-box2-unit6-p6-q3 ${
+                      locked || showAnswer ? "disabled-hover" : ""
+                    }`}
+                    style={{ color: imageColors.img4 || "#ffffffff" }}
+                    onDoubleClick={() => setActivePalette("img4")}
+                    onTouchStart={() => setActivePalette("img4")}
+                    onClick={() => document.getElementById("img4-dot").click()}
+                    dangerouslySetInnerHTML={{ __html: svgImages.img4 }}
+                  />
+                )}
+
+                {activePalette === "img4" && (
+                  <div className="color-palette-wb-unit5-p4-q2">
+                    {["red", "blue", "yellow", "brown"].map((color) => (
+                      <button
+                        key={color}
+                        className="color-circle"
+                        style={{ backgroundColor: color }}
+                        onClick={() => {
+                          setImageColors((prev) => ({ ...prev, img4: color }));
+                          setActivePalette(null);
+                        }}
+                      />
+                    ))}
+                  </div>
+                )}
                 <div
                   className="dot22-unit6-q7 end-dot22-unit6-q7"
                   data-image="img4"
@@ -314,6 +451,10 @@ const WB_Unit5_Page4_Q2 = () => {
             setFirstDot(null);
             setShowAnswer(false);
             setLocked(false); // ⭐⭐ NEW: السماح بالرسم مجدداً
+
+            // 🔁 إعادة الصور للونها الأساسي
+            setImageColors({});
+            setActivePalette(null);
           }}
           className="try-again-button"
         >

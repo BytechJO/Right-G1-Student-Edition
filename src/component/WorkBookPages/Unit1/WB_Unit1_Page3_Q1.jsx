@@ -66,7 +66,7 @@ const WB_Unit1_Page3_Q1 = () => {
   };
 
   return (
-    <div className="page8-wrapper" style={{padding:"30px"}}>
+    <div className="page8-wrapper" style={{ padding: "30px" }}>
       <div
         className="div-forall"
         style={{
@@ -94,9 +94,7 @@ const WB_Unit1_Page3_Q1 = () => {
               width: "100%",
             }}
           >
-            <div
-              style={{ fontSize: "20px", marginBottom: "5px", width: "25%" }}
-            >
+            <div className="scrambled-wb-unit1-p3-q1">
               <span
                 style={{
                   color: "#0d47a1",
@@ -112,7 +110,7 @@ const WB_Unit1_Page3_Q1 = () => {
               <input
                 className="input-text-field"
                 style={{
-                  width: "350px",
+                  width: "auto",
                   height: "35px",
                   fontWeight: "600",
                   fontSize: "20px",

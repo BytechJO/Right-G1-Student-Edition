@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
-import bat from "../../../assets/unit6/imgs/U6P50EXEB-01.svg";
-import cap from "../../../assets/unit6/imgs/U6P50EXEB-02.svg";
-import ant from "../../../assets/unit6/imgs/U6P50EXEB-03.svg";
+import bat from "../../../assets/U1 WB/U6/U6P35EXEF-01.svg";
+import cap from "../../../assets/U1 WB/U6/U6P35EXEF-02.svg";
+import ant from "../../../assets/U1 WB/U6/U6P35EXEF-03.svg";
 import dad from "../../../assets/unit6/imgs/U6P50EXEB-04.svg";
 import ValidationAlert from "../../Popup/ValidationAlert";
 import "./WB_Unit6_Page3_Q2.css"
@@ -139,7 +139,7 @@ const WB_Unit6_Page3_Q2 = () => {
             <div key={qIndex} className="row2-wb-unit6-p3-q2">
               <div style={{ display: "flex", gap: "10px" ,alignItems:"center"}}>
                 <span className="num-span">{qIndex + 1}</span>
-                <img src={q.img} alt="" className="q-img-wb-unit2-page3-q2" />
+                <img src={q.img} alt="" className="q-img-wb-unit6-p3-q2" />
               </div>
 
               <div className="sentence-wrapper-wb-unit4-p1-q2">

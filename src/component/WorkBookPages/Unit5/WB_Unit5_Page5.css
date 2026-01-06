@@ -1,15 +1,14 @@
 .wb-unit5-p5-q1 {
-  position: absolute;
-  padding: 5px;
-  top: 14.5%;
-  left: 41%;
+    position: absolute;
+    padding: 5px;
+    top: 3.5%;
+    left: 40%;
 }
-
 .wb-unit5-p5-q2 {
-  position: absolute;
-  padding: 5px;
-  top: 45.5%;
-  left: 35%;
+    position: absolute;
+    padding: 5px;
+    top: 48.5%;
+    left: 53%;
 }
 .wrong-x-circle-wb-u4-p5-q1{
 
@@ -28,17 +27,8 @@
     font-size: 14px;
     border: 2px solid white;
 }
-.word-bank-wb-u4-p5-q1 {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin: 15px 0;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .wb-unit5-p5-q1 {
     top: 14.5%;
     left: 41%;
@@ -60,4 +50,4 @@
     top: 45.5%;
     left: 35%;
   }
-}
+} */

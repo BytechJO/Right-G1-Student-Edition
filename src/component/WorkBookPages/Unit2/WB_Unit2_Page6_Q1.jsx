@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import img1 from "../../../assets/unit4/imgs/U4P34EXEC-01.svg";
-import img2 from "../../../assets/unit4/imgs/U4P34EXEC-02.svg";
-import img3 from "../../../assets/unit4/imgs/U4P34EXEC-03.svg";
+import img1 from "../../../assets/U1 WB/U2/U2P14EXEA-01.svg";
+import img2 from "../../../assets/U1 WB/U2/U2P14EXEA-02.svg";
+import img3 from "../../../assets/U1 WB/U2/U2P14EXEA-03.svg";
+import img4 from "../../../assets/U1 WB/U2/U2P14EXEA-04.svg";
+import img5 from "../../../assets/U1 WB/U2/U2P14EXEA-05.svg";
+import img6 from "../../../assets/U1 WB/U2/U2P14EXEA-06.svg";
 import ValidationAlert from "../../Popup/ValidationAlert";
 import "./WB_Unit2_Page6_Q1.css";
 
@@ -33,7 +36,7 @@ const WB_Unit2_Page6_Q1 = () => {
     },
     {
       id: 4,
-      image: img1,
+      image: img4,
       items: [
         { text: "pink", correct: "x" },
         { text: "pizza", correct: "✓" },
@@ -41,7 +44,7 @@ const WB_Unit2_Page6_Q1 = () => {
     },
     {
       id: 5,
-      image: img2,
+      image: img5,
       items: [
         { text: "ball", correct: "✓" },
         { text: "boy", correct: "x" },
@@ -49,7 +52,7 @@ const WB_Unit2_Page6_Q1 = () => {
     },
     {
       id: 6,
-      image: img3,
+      image: img6,
       items: [
         { text: "pink", correct: "✓" },
         { text: "pencil", correct: "x" },
@@ -164,10 +167,10 @@ const WB_Unit2_Page6_Q1 = () => {
             <span style={{ color: "red" }}>✓</span>
           </h4>
 
-          <div className="review3-p1-q3-grid">
+          <div className="wb-unit2-p6-q1-grid">
             {questions.map((q) => (
               <div key={q.id} className="review3-p1-q3-box">
-                <img src={q.image} alt="" className="review3-p1-q3-img" style={{width:"170px"}}/>
+                <img src={q.image} alt="" className="wb-unit2-p6-q1-img" />
 
                 {q.items.map((item, idx) => {
                   const isSelected = answers[q.id] === idx;

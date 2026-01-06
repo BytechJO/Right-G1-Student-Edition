@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 // import "./Unit5_Page6_Q1.css";
-import img1 from "../../../assets/unit6/imgs/U6P52EXEA-01.svg";
-import img2 from "../../../assets/unit6/imgs/U6P52EXEA-02.svg";
-import img3 from "../../../assets/unit6/imgs/U6P52EXEA-03.svg";
-import img4 from "../../../assets/unit6/imgs/U6P52EXEA-04.svg";
+import img1 from "../../../assets/U1 WB/U6/U6P36EXEH-01.svg";
+import img2 from "../../../assets/U1 WB/U6/U6P36EXEH-02.svg";
+import img3 from "../../../assets/U1 WB/U6/U6P36EXEH-03.svg";
+import img4 from "../../../assets/U1 WB/U6/U6P36EXEH-04.svg";
 import ValidationAlert from "../../Popup/ValidationAlert";
 const WB_Unit6_Page4_Q2 = () => {
   const [answers, setAnswers] = useState([]);
@@ -126,7 +126,7 @@ const WB_Unit6_Page4_Q2 = () => {
           <h4 className="header-title-page8">
             <span className="ex-A"> H</span> Look and write.
           </h4>
-          <div className="content-container-unit5-p6-q1">
+          <div className="content-container-wb-unit6-p4-q2">
             <div className="section-one-wb-unit6-p4-q2">
               <div className="img-container-wb-unit6-p4-q2">
                 <span
@@ -138,7 +138,7 @@ const WB_Unit6_Page4_Q2 = () => {
                 >
                   1
                 </span>{" "}
-                <img src={img1} className="img-unit5-p6-q1" />
+                <img src={img1} className="img-wb-unit6-p4-q2 " />
               </div>
               <div className="content-input-unit5-p6-q1">
                 <input
@@ -298,7 +298,7 @@ const WB_Unit6_Page4_Q2 = () => {
                 >
                   3
                 </span>{" "}
-                <img src={img3} className="img-unit5-p6-q1" />
+                <img src={img3} className="img-wb-unit6-p4-q2" />
               </div>
               <div className="content-input-unit5-p6-q1">
                 <div style={{ position: "relative" }}>
@@ -356,7 +356,7 @@ const WB_Unit6_Page4_Q2 = () => {
                 >
                   4
                 </span>{" "}
-                <img src={img4} className="img-unit5-p6-q1" />
+                <img src={img4} className="img-wb-unit6-p4-q2" />
               </div>
               <div className="content-input-unit5-p6-q1">
                 <div

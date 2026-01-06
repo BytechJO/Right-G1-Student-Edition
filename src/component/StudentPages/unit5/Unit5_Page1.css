@@ -105,3 +105,14 @@
     pointer-events: none;
   }
 }
+
+@media (max-width: 820px) {
+  .headset-icon-CD-unit5-page1-2 {
+    bottom: 40.5%;
+    left: 25%;
+  }
+  .click-icon-unit5-page1-2 {
+    bottom: 13%;
+    right: 41%;
+  }
+}

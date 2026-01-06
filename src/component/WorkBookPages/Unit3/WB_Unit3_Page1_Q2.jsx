@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import ValidationAlert from "../../Popup/ValidationAlert";
 import "./WB_Unit3_Page1_Q2.css";
-import bat from "../../../assets/U1 WB/U1/SVG/U1P8EXEC-01.svg";
-import box from "../../../assets/U1 WB/U1/SVG/U1P8EXEC-02.svg";
-import bucket from "../../../assets/U1 WB/U1/SVG/U1P8EXEC-03.svg";
-import boat from "../../../assets/U1 WB/U1/SVG/U1P8EXEC-04.svg";
+import bat from "../../../assets/U1 WB/U3/SVG/U3P15EXEB-01.svg";
+import box from "../../../assets/U1 WB/U3/SVG/U3P15EXEB-02.svg";
+import bucket from "../../../assets/U1 WB/U3/SVG/U3P15EXEB-03.svg";
+import boat from "../../../assets/U1 WB/U3/SVG/U3P15EXEB-04.svg";
 
 export default function WB_Unit3_Page1_Q2() {
   const questions = [
@@ -137,7 +137,8 @@ export default function WB_Unit3_Page1_Q2() {
               <img
                 src={q.image}
                 alt=""
-                style={{ height: "100px", width: "100px" }}
+                className="img-wb-unit3-p1-q2"
+               
               />
 
               <div className="numbers-row">

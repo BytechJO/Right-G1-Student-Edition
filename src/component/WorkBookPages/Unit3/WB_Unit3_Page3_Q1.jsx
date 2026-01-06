@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
-import bat from "../../../assets/unit6/imgs/U6P50EXEB-01.svg";
-import cap from "../../../assets/unit6/imgs/U6P50EXEB-02.svg";
-import ant from "../../../assets/unit6/imgs/U6P50EXEB-03.svg";
-import dad from "../../../assets/unit6/imgs/U6P50EXEB-04.svg";
+import bat from "../../../assets/U1 WB/U3/SVG/U3P17EXEE-01.svg";
+import cap from "../../../assets/U1 WB/U3/SVG/U3P17EXEE-02.svg";
+import ant from "../../../assets/U1 WB/U3/SVG/U3P17EXEE-03.svg";
+import dad from "../../../assets/U1 WB/U3/SVG/U3P17EXEE-04.svg";
+import dad2 from "../../../assets/U1 WB/U3/SVG/U3P17EXEE-05.svg";
+import dad3  from "../../../assets/U1 WB/U3/SVG/U3P17EXEE-06.svg";
 import ValidationAlert from "../../Popup/ValidationAlert";
 import "./WB_Unit3_Page3_Q1.css";
 const WB_Unit3_Page3_Q1 = () => {
@@ -133,7 +135,7 @@ const WB_Unit3_Page3_Q1 = () => {
           >
             <div style={{ display: "flex", gap: "10px" }}>
               <span className="num-span">1</span>
-              <img src={bat} alt="" className="q-img-wb-unit2-page3-q2" />
+              <img src={bat} alt="" className="q-img-wb-unit3-page3-q2" />
             </div>
             <div
               className="input-wrapper-unit3-page6-q1"
@@ -157,7 +159,7 @@ const WB_Unit3_Page3_Q1 = () => {
           >
             <div style={{ display: "flex", gap: "10px" }}>
               <span className="num-span">2</span>{" "}
-              <img src={cap} alt="" className="q-img-wb-unit2-page3-q2" />
+              <img src={cap} alt="" className="q-img-wb-unit3-page3-q2" />
             </div>
             <div
               className="input-wrapper-unit3-page6-q1"
@@ -181,7 +183,7 @@ const WB_Unit3_Page3_Q1 = () => {
           >
             <div style={{ display: "flex", gap: "10px" }}>
               <span className="num-span">3</span>{" "}
-              <img src={ant} alt="" className="q-img-wb-unit2-page3-q2" />
+              <img src={ant} alt="" className="q-img-wb-unit3-page3-q2" />
             </div>
             <div
               className="input-wrapper-unit3-page6-q1"
@@ -206,7 +208,7 @@ const WB_Unit3_Page3_Q1 = () => {
             <div style={{ display: "flex", gap: "10px" }}>
               <span className="num-span">4</span>
 
-              <img src={dad} alt="" className="q-img-wb-unit2-page3-q2" />
+              <img src={dad} alt="" className="q-img-wb-unit3-page3-q2" />
             </div>
 
             <div
@@ -232,7 +234,7 @@ const WB_Unit3_Page3_Q1 = () => {
             <div style={{ display: "flex", gap: "10px" }}>
               <span className="num-span">5</span>
 
-              <img src={dad} alt="" className="q-img-wb-unit2-page3-q2" />
+              <img src={dad2} alt="" className="q-img-wb-unit3-page3-q2" />
             </div>
 
             <div
@@ -258,7 +260,7 @@ const WB_Unit3_Page3_Q1 = () => {
             <div style={{ display: "flex", gap: "10px" }}>
               <span className="num-span">6</span>
 
-              <img src={dad} alt="" className="q-img-wb-unit2-page3-q2" />
+              <img src={dad3} alt="" className="q-img-wb-unit3-page3-q2" />
             </div>
 
             <div

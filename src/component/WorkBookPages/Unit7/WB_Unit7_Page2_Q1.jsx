@@ -591,8 +591,8 @@ const WB_Unit7_Page2_Q1 = () => {
           >
             Start Again ↻
           </button>
-{/* 
-          <button
+
+          {/* <button
             onClick={() => {
               const rect = containerRef.current.getBoundingClientRect();
 

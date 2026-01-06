@@ -1,10 +1,10 @@
 import "./WB_Unit8_Page5_Q1.css";
 import React, { useState } from "react";
 import ValidationAlert from "../../Popup/ValidationAlert";
-import img1 from "../../../assets/unit3/imgs3/P26exeB-01.svg";
-import img2 from "../../../assets/unit3/imgs3/P26exeB-02.svg";
-import img3 from "../../../assets/unit3/imgs3/P26exeB-03.svg";
-import img4 from "../../../assets/unit3/imgs3/P26exeB-04.svg";
+import img1 from "../../../assets/U1 WB/U8/U8P49EXEI-01.svg";
+import img2 from "../../../assets/U1 WB/U8/U8P49EXEI-02.svg";
+// import img3 from "../../../assets/unit3/imgs3/P26exeB-03.svg";
+// import img4 from "../../../assets/unit3/imgs3/P26exeB-04.svg";
 const WB_Unit8_Page5_Q1 = () => {
   // الإجابات المدخلة من الطالب
   const [answers, setAnswers] = useState(["", "", "", "", ""]);
@@ -17,13 +17,7 @@ const WB_Unit8_Page5_Q1 = () => {
   const correctData = ["4", "5", "1", "3", "2"];
 
   // البيانات
-  const options = [
-    { img: img1 },
-    { img: img2 },
-    { img: img3 },
-    { img: img4 },
-    { img: img4 },
-  ];
+  const options = [{ img: img1 }, { img: img2 }];
 
   // تحديث خانة الإدخال
   const handleChange = (index, value) => {
@@ -104,30 +98,64 @@ const WB_Unit8_Page5_Q1 = () => {
           <span className="ex-A">I</span>Look and number.
         </h5>
         {/* الصور */}
-        <div className="wb-unit7-p5-q1-grid">
-          {options.map((item, index) => (
-            <div key={index} className="wb-unit8-p5-q1-box">
-              <img src={item.img} className="unit3-q3-image" alt="" />
+        <div className="look-number-wrapper">
+          <div className="image-area">
+            <img src={img1} alt="boy" style={{height:"300px"}} />
 
-              {/* إدخال الإجابة */}
-              <div className="wb-unit7-p5-q1-input-wrapper">
-                <input
-                  type="text"
-                  maxLength="1"
-                  value={answers[index]}
-                  onChange={(e) => handleChange(index, e.target.value)}
-                  className={`wb-unit7-p5-q1-input `}
-                  readOnly={showAnswer} // ← new 👈 منع التعديل بعد Show Answer
-                />
+            {/* inputs فوق الصورة */}
+            <input
+              className="number-input"
+              style={{ top: "14%", left: "14%" }}
+              value={answers[0]}
+              onChange={(e) => handleChange(0, e.target.value)}
+              maxLength="1"
+              readOnly={showAnswer}
+            />
 
-                {/* إشارة X */}
-                {showResult[index] === "wrong" && (
-                  <div className="unit3-q3-wrong">X</div>
-                )}
-              </div>
-            </div>
-          ))}
+            <input
+              className="number-input"
+              style={{ top: "16%", left: "78%" }}
+              value={answers[1]}
+              onChange={(e) => handleChange(1, e.target.value)}
+              maxLength="1"
+              readOnly={showAnswer}
+            />
+
+            <input
+              className="number-input"
+              style={{ top: "66%", left: "18%" }}
+              value={answers[2]}
+              onChange={(e) => handleChange(2, e.target.value)}
+              maxLength="1"
+              readOnly={showAnswer}
+            />
+          </div>
+          <div className="image-area">
+            <img src={img2} alt="boy" style={{height:"300px"}}/>
+
+            {/* inputs فوق الصورة */}
+            <input
+              className="number-input"
+              style={{ top: "5%", left: "83%" }}
+              value={answers[3]}
+              onChange={(e) => handleChange(3, e.target.value)}
+              maxLength="1"
+              readOnly={showAnswer}
+            />
+
+            <input
+              className="number-input"
+              style={{ top: "39%", left: "83%" }}
+              value={answers[4]}
+              onChange={(e) => handleChange(4, e.target.value)}
+              maxLength="1"
+              readOnly={showAnswer}
+            />
+
+         
+          </div>
         </div>
+
         <div className="word-container-wb-unit8-p5-q1">
           {[
             "This is my leg.",

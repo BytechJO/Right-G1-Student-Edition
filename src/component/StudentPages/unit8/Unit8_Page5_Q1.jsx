@@ -162,8 +162,8 @@ const Unit8_Page5_Q1 = () => {
         <button onClick={reset} className="try-again-button">
           Start Again ↻
         </button>
-{/* 
-        <button
+
+        {/* <button
           onClick={handleShowAnswer}
           className="show-answer-btn swal-continue"
         >

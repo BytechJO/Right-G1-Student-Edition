@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import ValidationAlert from "../../Popup/ValidationAlert";
 // import "./Review10_Page2_Q3.css";
-import img1 from "../../../assets/unit4/imgs/U4P37EEXEE-01-01.svg";
-import img2 from "../../../assets/unit4/imgs/U4P37EEXEE-01-02.svg";
-import img3 from "../../../assets/unit4/imgs/U4P37EEXEE-02-01.svg";
-import img4 from "../../../assets/unit4/imgs/U4P37EEXEE-02-02.svg";
+import img1 from "../../../assets/U1 WB/U4/U4P26EXEBC-01.svg";
+import img2 from "../../../assets/U1 WB/U4/U4P26EXEBC-02.svg";
+import img3 from "../../../assets/U1 WB/U4/U4P26EXEBC-03.svg";
+import img4 from "../../../assets/U1 WB/U4/U4P26EXEBC-04.svg";
+import img5 from "../../../assets/U1 WB/U4/U4P26EXEBC-05.svg";
+import img6 from "../../../assets/U1 WB/U4/U4P26EXEBC-06.svg";
 
 const data = [
   {
@@ -13,11 +15,11 @@ const data = [
         before: "A",
         middleImg: img1,
         blank: 1,
-        after: "is driving a",
+        after: "",
       },
       {
-        before: "",
-        middleImg: img2,
+        before: "is driving a",
+        middleImg: img4,
         blank: 2,
         after: ".",
       },
@@ -28,28 +30,29 @@ const data = [
     parts: [
       {
         before: "A",
-        middleImg: img3,
+        middleImg: img2,
         blank: 1,
-        after: "wearing",
+        after: "",
       },
       {
-        before: "a ",
-        middleImg: img4,
+        before: "wearing a ",
+        middleImg: img5,
         blank: 2,
-        after: "is running on his",
+        after: "",
       },
       {
-        before: "bare",
-        middleImg: img4,
+        before: "is running on his bare",
+        middleImg: img3,
         blank: 3,
-        after: "after the van with",
+        after: "",
       },
       {
-        before: "a",
-        middleImg: img4,
+        before: "after the van with a",
+        middleImg: img6,
         blank: 4,
-        after: "in his hand.",
+        after: "in his hand. ",
       },
+       
     ],
     correct: ["vet", "vest", "feet", "fork"],
   },

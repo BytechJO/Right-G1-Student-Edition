@@ -155,7 +155,7 @@ export default function WB_Unit1_Page4_Q2() {
       >
         <h5 className="header-title-page8">
           {" "}
-          <span className="ex-A">B</span> Unscramble and match.
+          <span className="ex-A">D</span> Unscramble and match.
         </h5>
 
         <div className="matching-wrapper2" ref={containerRef}>
@@ -169,7 +169,7 @@ export default function WB_Unit1_Page4_Q2() {
               <div className="word-row2" key={i}>
                 <span className="num2">{i + 1}</span>
                 <span
-                  className="word-text3"
+                  className="word-text3  word-text-unit1-p4-q2"
                   onClick={() => document.getElementById(`dot-${word}`).click()}
                   style={{ cursor: "pointer", width: "230px" }}
                 >

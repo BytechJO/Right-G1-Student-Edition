@@ -2,10 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import CD13_Pg14_Instruction1_AdultLady from "../../../assets/img_unit2/sounds-unit2/CD13.Pg14_Instruction1_Adult Lady.mp3";
 import ValidationAlert from "../../Popup/ValidationAlert";
 import "./WB_Unit8_Page3_Q2.css";
-import img1 from "../../../assets/unit6/imgs/U6P54EXEA-01.svg";
-import img2 from "../../../assets/unit6/imgs/U6P54EXEA-02.svg";
-import img3 from "../../../assets/unit6/imgs/U6P54EXEA-03.svg";
-import img4 from "../../../assets/unit6/imgs/U6P54EXEA-04.svg";
+import img1 from "../../../assets/U1 WB/U8/U8P47EXEF-01.svg";
+import img2 from "../../../assets/U1 WB/U8/U8P47EXEF-02.svg";
+import img3 from "../../../assets/U1 WB/U8/U8P47EXEF-03.svg";
+import img4 from "../../../assets/U1 WB/U8/U8P47EXEF-04.svg";
 const WB_Unit8_Page3_Q2 = () => {
   const [answers, setAnswers] = useState(Array(4).fill(null));
   const [showResult, setShowResult] = useState(false);
@@ -98,7 +98,8 @@ const WB_Unit8_Page3_Q2 = () => {
         padding: "30px",
       }}
     >
-      <div  className="div-forall"
+      <div
+        className="div-forall"
         style={{
           display: "flex",
           flexDirection: "column",
@@ -112,7 +113,7 @@ const WB_Unit8_Page3_Q2 = () => {
             <span className="ex-A">F</span> Look, read, and circle.
           </h5>
         </div>
-        <div className="container-review6-p1-q1">
+        <div className="container-wb-unit8-p3-q2">
           {items.map((q, i) => (
             <div
               key={i}
@@ -137,11 +138,7 @@ const WB_Unit8_Page3_Q2 = () => {
                   {i + 1}
                 </span>
                 <div className="img-div-review6-p1-q1">
-                  <img
-                    src={q.img}
-                    className="q3-image-review6-p1-q1"
-                    style={{ height: "150px", width: "auto" }}
-                  />
+                  <img src={q.img} className="q3-image-wb-unit8-p3-q2" />
                 </div>
               </div>
 

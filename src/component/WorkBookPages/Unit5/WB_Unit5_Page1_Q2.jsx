@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./WB_Unit5_Page1_Q2.css";
 import ValidationAlert from "../../Popup/ValidationAlert";
-import img1 from "../../../assets/unit8/imgs/U8P73EXEG-01.svg";
-import img2 from "../../../assets/unit8/imgs/U8P73EXEG-02.svg";
+import img1 from "../../../assets/U1 WB/U5/U5P27EXEB-01.svg";
+import img2 from "../../../assets/U1 WB/U5/U5P27EXEB-02.svg";
+import img3 from "../../../assets/U1 WB/U5/U5P27EXEB-03.svg";
 const WB_Unit5_Page1_Q2 = () => {
   // ===============================
   // 🔵 1) الأسئلة (كلها داخل نفس الكومبونينت)
@@ -37,7 +38,7 @@ const WB_Unit5_Page1_Q2 = () => {
         { type: "text", value: "ruler." },
       ],
       correct: ["your"],
-      image: img2,
+      image: img3,
     },
   ];
 
@@ -160,8 +161,8 @@ const WB_Unit5_Page1_Q2 = () => {
                   </span>
                   <img
                     src={q.image}
-                    className="question-img-review5-p2-q3"
-                    style={{ width: "180px" }}
+                    className="question-img-wb-unit5-p1-q2"
+                   
                   />
                 </div>
                 <div
